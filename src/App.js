@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import UserDetailsPage from "../src/component/user_details/UserDetailsPage";
 import logo from "./img/logo.png";
+import FilmDetail from "./pages/FilmDetail";
+import Home from "./pages/Home";
 import BookingsPage from "./component/booking/BookingPage";
 import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
 function App() {
@@ -16,11 +18,15 @@ function App() {
                             >
                                 {/* <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
             <use xlink:href="#bootstrap"></use></svg> */}
-                                <img id="logo" src={logo} alt="Girl in a jacket"></img>
+                                <img
+                                    id="logo"
+                                    src={logo}
+                                    alt="Girl in a jacket"
+                                ></img>
                             </a>
 
                             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                            <li>
+                                <li>
                                     <Link
                                         to="/booking"
                                         className="btn btn-header"
@@ -56,7 +62,10 @@ function App() {
                                 >
                                     Login
                                 </button>
-                                <button type="button" className="btn btn-warning">
+                                <button
+                                    type="button"
+                                    className="btn btn-warning"
+                                >
                                     Sign-up
                                 </button>
                             </div>
@@ -65,6 +74,8 @@ function App() {
                 </header>
             </div>
             <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route path="/filmdetail" element={<FilmDetail />} />
                 <Route path="/booking" element={<BookingsPage />} />
                 <Route path="/userdetails" element={<UserDetailsPage />} />
                 {/* <Route path="/bookables" element={<BookablesPage/>} />
@@ -102,7 +113,9 @@ function App() {
                                     <a className="text-white">BrandFlow</a>
                                 </p>
                                 <p>
-                                    <a className="text-white">Bootstrap Angular</a>
+                                    <a className="text-white">
+                                        Bootstrap Angular
+                                    </a>
                                 </p>
                             </div>
 
@@ -135,20 +148,20 @@ function App() {
                                     Contact
                                 </h6>
                                 <p>
-                                    <i className="fas fa-home mr-3"></i> New York,
-                                    NY 10012, US
+                                    <i className="fas fa-home mr-3"></i> New
+                                    York, NY 10012, US
                                 </p>
                                 <p>
                                     <i className="fas fa-envelope mr-3"></i>{" "}
                                     info@gmail.com
                                 </p>
                                 <p>
-                                    <i className="fas fa-phone mr-3"></i> + 01 234
-                                    567 88
+                                    <i className="fas fa-phone mr-3"></i> + 01
+                                    234 567 88
                                 </p>
                                 <p>
-                                    <i className="fas fa-print mr-3"></i> + 01 234
-                                    567 89
+                                    <i className="fas fa-print mr-3"></i> + 01
+                                    234 567 89
                                 </p>
                             </div>
                         </div>
