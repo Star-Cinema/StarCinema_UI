@@ -2,7 +2,7 @@
 import { TbAlertCircle } from "react-icons/tb";
 function Transactions() {
     return (
-        <table class="table">
+        <table className="table">
             <thead>
                 <tr>
                     <th scope="col">Mã giao dịch</th>

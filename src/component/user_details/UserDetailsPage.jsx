@@ -24,30 +24,30 @@ function UserDetailsPage() {
             </Tab> */}
                 </Tabs>
                 <div className="list-films">
-                    <div class="row row-cols-1 row-cols-md-4 g-4">
-                        <div class="col">
+                    <div className="row row-cols-1 row-cols-md-4 g-4">
+                        <div className="col">
                             <CardFilm />
                         </div>
 
-                        <div class="col">
+                        <div className="col">
                             <CardFilm />
                         </div>
-                        <div class="col">
+                        <div className="col">
                             <CardFilm />
                         </div>
-                        <div class="col">
+                        <div className="col">
                             <CardFilm />
                         </div>
-                        {/* <div class="col">
-                            <div class="card">
+                        {/* <div className="col">
+                            <div className="card">
                                 <img
                                     src="..."
-                                    class="card-img-top"
+                                    className="card-img-top"
                                     alt="..."
                                 ></img>
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">
+                                <div className="card-body">
+                                    <h5 className="card-title">Card title</h5>
+                                    <p className="card-text">
                                         This is a longer card with supporting
                                         text below as a natural lead-in to
                                         additional content. This content is a

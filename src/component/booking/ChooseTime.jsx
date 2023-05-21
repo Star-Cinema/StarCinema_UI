@@ -6,13 +6,24 @@ function createSeats() {
     const columns = 10;
 
     for (let i = 0; i < rows.length; i++) {
-        for (let j = 1; j <= columns; j++) {
-            const seat = {
-                id: rows[i] + j,
-                name: rows[i] + j,
-                status: "available", // Trạng thái mặc định là "available"
-            };
-            seats.push(seat);
+        if (i <= 1) {
+            for (let j = 1; j <= columns; j++) {
+                const seat = {
+                    id: rows[i] + j,
+                    name: rows[i] + j,
+                    status: "available", // Trạng thái mặc định là "available"
+                };
+                seats.push(seat);
+            }
+        } else {
+            for (let j = 1; j <= columns; j++) {
+                const seat = {
+                    id: rows[i] + j,
+                    name: rows[i] + j,
+                    status: "unavailable", // Trạng thái mặc định là "available"
+                };
+                seats.push(seat);
+            }
         }
     }
 
@@ -21,10 +32,11 @@ function createSeats() {
 
 // Sử dụng hàm để tạo danh sách ghế
 const seatList = createSeats();
-function ChooseTime({ listTimes }) {
-    const [timeIndex, setTimeIndex] = useState(0);
+function ChooseTime({ listTimes, setData, setSeat }) {
+    const [timeIndex, setTimeIndex] = useState(null);
     return (
         <div>
+            <h4>Choose Time</h4>
             <ul className="choose-dates items-list-nav">
                 {listTimes.map((time, index) => (
                     <li
@@ -33,16 +45,29 @@ function ChooseTime({ listTimes }) {
                     >
                         <button
                             className="btn"
-                            onClick={() => setTimeIndex(index)}
+                            onClick={() => {
+                                setTimeIndex(index);
+                                setData("scheduleId", time.id);
+                            }}
                         >
-                            {time.getHours() + ":" + time.getMinutes()}
+                            {time.date.getHours() +
+                                ":" +
+                                time.date.getMinutes()}
                         </button>
                     </li>
                 ))}
             </ul>
-            <div>
-                <ChooseSeats listSeats = {seatList}/>
-            </div>
+            <hr></hr>
+            <h4>Choose Seat(s)</h4>
+            {timeIndex === null ? (
+                ""
+            ) : (
+                <ChooseSeats
+                    listSeats={seatList}
+                    setData={setData}
+                    setSeat={setSeat}
+                />
+            )}
         </div>
     );
 }

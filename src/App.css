@@ -36,6 +36,14 @@ header {
   margin: 0 auto;
 }
 
+.screen {
+  height: 70px;
+  background: white;
+  width: 100%;
+  transform: rotateX(-30deg) scale(1.1);
+  box-shadow: 0 3px 10px 2px;
+}
+
 .main {
   padding: 4em 2em;
 }
@@ -231,9 +239,6 @@ main {
   margin-top: 1rem;
 }
 
-.movie-booking {
-  width: 50%;
-}
 
 .booking-page .bottom {
   display: flex;
@@ -249,14 +254,107 @@ main {
   border-radius: 11.0129px;
   transform: rotate(-0.46deg);
 }
+
 footer.text-center.text-lg-start.text-white {
   background: var(--primary);
 }
 
-#logo{
+#logo {
   width: 11rem;
 }
 
-.header-top{
+.header-top {
   width: 100%;
+}
+
+.nav-films img {
+  width: 6rem;
+}
+
+.choose-service {
+  border: 1px solid #ced4da;
+  border-radius: 21px;
+  padding: 1em;
+  background: white;
+}
+
+.main-booking {
+  display: flex;
+}
+
+button.btn.btn-info.seat-choosen {
+  background: #00FF00	;
+}
+
+ul.list-group {
+  list-style: none;
+}
+
+.choose-seat {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.btn-toolbar {
+  margin-bottom: 1rem;
+}
+
+.row {
+  height: fit-content;
+}
+
+.content-booking {
+  background: white;
+  padding: 1em 2em;
+  border: 1px solid #ced4da;
+  border-radius: 21px;
+}
+li.ng-scope {
+  border: 1px solid #ced4da;
+  border-radius: 21px;
+}
+.ShowCase {
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: white;
+  padding: 12px;
+  border-radius: 4px;
+  /* border: 1px solid #ced4da; */
+  border-radius: 21px;
+  color: #7e7e7e;
+}
+.seat {
+  display: inline-block;
+  background: #2E1371;
+  width: 16px;
+  height: 12px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  top: 1px;
+}
+span.seat.selected {
+  background: #00FF00	;
+}
+span.seat.occupied{
+  background: gray	;
+}
+.ShowCase li {
+  margin: 0 2rem;
+}
+button.btn.btn-info.seat-unavailable {
+  background-color: gray;
+}
+/* button.btn.btn-info.seat-available {
+  background-color: white;
+  border: 1px solid #ced4da;
+  color: black;
+} */
+
+.please-film{
+  text-align: center;
 }

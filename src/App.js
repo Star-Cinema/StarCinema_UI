@@ -7,19 +7,19 @@ function App() {
     return (
         <Router>
             <div>
-                <header class="p-3 text-white">
-                    <div class="header-top">
-                        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <header className="p-3 text-white">
+                    <div className="header-top">
+                        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                             <a
                                 href="/"
-                                class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+                                className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
                             >
-                                {/* <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                                {/* <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
             <use xlink:href="#bootstrap"></use></svg> */}
                                 <img id="logo" src={logo} alt="Girl in a jacket"></img>
                             </a>
 
-                            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                             <li>
                                     <Link
                                         to="/booking"
@@ -40,23 +40,23 @@ function App() {
                                 </li>
                             </ul>
 
-                            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                            <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                                 <input
                                     type="search"
-                                    class="form-control form-control-dark"
+                                    className="form-control form-control-dark"
                                     placeholder="Search..."
                                     aria-label="Search"
                                 ></input>
                             </form>
 
-                            <div class="text-end">
+                            <div className="text-end">
                                 <button
                                     type="button"
-                                    class="btn btn-outline-light me-2"
+                                    className="btn btn-outline-light me-2"
                                 >
                                     Login
                                 </button>
-                                <button type="button" class="btn btn-warning">
+                                <button type="button" className="btn btn-warning">
                                     Sign-up
                                 </button>
                             </div>
@@ -70,12 +70,12 @@ function App() {
                 {/* <Route path="/bookables" element={<BookablesPage/>} />
                 <Route path="/users" element={<UsersPage/>} /> */}
             </Routes>
-            <footer class="text-center text-lg-start text-white">
-                <div class=" p-4 pb-0">
-                    <section class="">
-                        <div class="row">
-                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                                <h6 class="text-uppercase mb-4 font-weight-bold">
+            <footer className="text-center text-lg-start text-white">
+                <div className=" p-4 pb-0">
+                    <section className="">
+                        <div className="row">
+                            <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 className="text-uppercase mb-4 font-weight-bold">
                                     Company name
                                 </h6>
                                 <p>
@@ -86,83 +86,83 @@ function App() {
                                 </p>
                             </div>
 
-                            <hr class="w-100 clearfix d-md-none" />
+                            <hr className="w-100 clearfix d-md-none" />
 
-                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                                <h6 class="text-uppercase mb-4 font-weight-bold">
+                            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 className="text-uppercase mb-4 font-weight-bold">
                                     Products
                                 </h6>
                                 <p>
-                                    <a class="text-white">MDBootstrap</a>
+                                    <a className="text-white">MDBootstrap</a>
                                 </p>
                                 <p>
-                                    <a class="text-white">MDWordPress</a>
+                                    <a className="text-white">MDWordPress</a>
                                 </p>
                                 <p>
-                                    <a class="text-white">BrandFlow</a>
+                                    <a className="text-white">BrandFlow</a>
                                 </p>
                                 <p>
-                                    <a class="text-white">Bootstrap Angular</a>
+                                    <a className="text-white">Bootstrap Angular</a>
                                 </p>
                             </div>
 
-                            <hr class="w-100 clearfix d-md-none" />
+                            <hr className="w-100 clearfix d-md-none" />
 
-                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                                <h6 class="text-uppercase mb-4 font-weight-bold">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 className="text-uppercase mb-4 font-weight-bold">
                                     Useful links
                                 </h6>
                                 <p>
-                                    <a class="text-white">Your Account</a>
+                                    <a className="text-white">Your Account</a>
                                 </p>
                                 <p>
-                                    <a class="text-white">
+                                    <a className="text-white">
                                         Become an Affiliate
                                     </a>
                                 </p>
                                 <p>
-                                    <a class="text-white">Shipping Rates</a>
+                                    <a className="text-white">Shipping Rates</a>
                                 </p>
                                 <p>
-                                    <a class="text-white">Help</a>
+                                    <a className="text-white">Help</a>
                                 </p>
                             </div>
 
-                            <hr class="w-100 clearfix d-md-none" />
+                            <hr className="w-100 clearfix d-md-none" />
 
-                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                                <h6 class="text-uppercase mb-4 font-weight-bold">
+                            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 className="text-uppercase mb-4 font-weight-bold">
                                     Contact
                                 </h6>
                                 <p>
-                                    <i class="fas fa-home mr-3"></i> New York,
+                                    <i className="fas fa-home mr-3"></i> New York,
                                     NY 10012, US
                                 </p>
                                 <p>
-                                    <i class="fas fa-envelope mr-3"></i>{" "}
+                                    <i className="fas fa-envelope mr-3"></i>{" "}
                                     info@gmail.com
                                 </p>
                                 <p>
-                                    <i class="fas fa-phone mr-3"></i> + 01 234
+                                    <i className="fas fa-phone mr-3"></i> + 01 234
                                     567 88
                                 </p>
                                 <p>
-                                    <i class="fas fa-print mr-3"></i> + 01 234
+                                    <i className="fas fa-print mr-3"></i> + 01 234
                                     567 89
                                 </p>
                             </div>
                         </div>
                     </section>
 
-                    <hr class="my-3"></hr>
+                    <hr className="my-3"></hr>
 
-                    <section class="p-3 pt-0">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-md-7 col-lg-8 text-center text-md-start">
-                                <div class="p-3">
+                    <section className="p-3 pt-0">
+                        <div className="row d-flex align-items-center">
+                            <div className="col-md-7 col-lg-8 text-center text-md-start">
+                                <div className="p-3">
                                     © 2020 Copyright:
                                     <a
-                                        class="text-white"
+                                        className="text-white"
                                         href="https://mdbootstrap.com/"
                                     >
                                         MDBootstrap.com
@@ -170,32 +170,32 @@ function App() {
                                 </div>
                             </div>
 
-                            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                            <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
                                 <a
-                                    class="btn btn-outline-light btn-floating m-1 text-white"
+                                    className="btn btn-outline-light btn-floating m-1 text-white"
                                     role="button"
                                 >
-                                    <i class="fab fa-facebook-f"></i>
+                                    <i className="fab fa-facebook-f"></i>
                                 </a>
                                 <a
-                                    class="btn btn-outline-light btn-floating m-1 text-white"
+                                    className="btn btn-outline-light btn-floating m-1 text-white"
                                     role="button"
                                 >
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-
-                                <a
-                                    class="btn btn-outline-light btn-floating m-1 text-white"
-                                    role="button"
-                                >
-                                    <i class="fab fa-google"></i>
+                                    <i className="fab fa-twitter"></i>
                                 </a>
 
                                 <a
-                                    class="btn btn-outline-light btn-floating m-1 text-white"
+                                    className="btn btn-outline-light btn-floating m-1 text-white"
                                     role="button"
                                 >
-                                    <i class="fab fa-instagram"></i>
+                                    <i className="fab fa-google"></i>
+                                </a>
+
+                                <a
+                                    className="btn btn-outline-light btn-floating m-1 text-white"
+                                    role="button"
+                                >
+                                    <i className="fab fa-instagram"></i>
                                 </a>
                             </div>
                         </div>
