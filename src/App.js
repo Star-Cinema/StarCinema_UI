@@ -5,6 +5,7 @@ import FilmDetail from "./pages/FilmDetail";
 import Home from "./pages/Home";
 import BookingsPage from "./component/booking/BookingPage";
 import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
+import NewsDetail from "./pages/NewsDetails";
 function App() {
     return (
         <Router>
@@ -76,7 +77,9 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/filmdetail" element={<FilmDetail />} />
+                <Route path="/newsdetail" element={<NewsDetail/>} />
                 <Route path="/booking" element={<BookingsPage />} />
+
                 <Route path="/userdetails" element={<UserDetailsPage />} />
                 {/* <Route path="/bookables" element={<BookablesPage/>} />
                 <Route path="/users" element={<UsersPage/>} /> */}
