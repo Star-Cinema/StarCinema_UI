@@ -133,7 +133,7 @@ const FilmInfo = () => {
             />
             <Row>
               <Col span={18}>
-                <Row style={{ marginTop: "1.5em" }}>
+                <Row style={{ margin: "1.5em" }}>
                   <Col span={8}>
                     <div>
                       <Image
