@@ -12,12 +12,12 @@ import "../App.css";
 const Home = () => {
   return (
     <>
-      <AppHeader />
+      {/* <AppHeader /> */}
       <Banner  />
       
       <FilmTab />
       <News />
-      <Footer style={{ backgroundColor: "rgba(0,0,0,0.7)" }} />
+      {/* <Footer style={{ backgroundColor: "rgba(0,0,0,0.7)" }} /> */}
     </>
   );
 };
