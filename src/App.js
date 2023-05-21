@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import BookingsPage from "./component/booking/BookingPage";
 import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
 import NewsDetail from "./pages/NewsDetails";
+import AppFooter from "./components/home/AppFooter";
 function App() {
     return (
         <Router>
@@ -84,7 +85,7 @@ function App() {
                 {/* <Route path="/bookables" element={<BookablesPage/>} />
                 <Route path="/users" element={<UsersPage/>} /> */}
             </Routes>
-            <footer className="text-center text-lg-start text-white">
+            {/* <footer className="text-center text-lg-start text-white">
                 <div className=" p-4 pb-0">
                     <section className="">
                         <div className="row">
@@ -217,7 +218,8 @@ function App() {
                         </div>
                     </section>
                 </div>
-            </footer>
+            </footer> */}
+            <AppFooter/>
         </Router>
     );
 }
