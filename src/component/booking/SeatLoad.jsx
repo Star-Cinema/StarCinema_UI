@@ -1,5 +1,6 @@
 import { useState } from "react";
-function SeatLoad({ seat, setData, setSeat }) {
+function SeatLoad({ seat, handleSeatsId }) {
+    
     const [status, setStatus] = useState(seat.status);
     // const [TabIndex, setTabIndex] = useState(0);
     let seatClass = "btn btn-info seat-available";
@@ -20,10 +21,10 @@ function SeatLoad({ seat, setData, setSeat }) {
             onClick={() => {
                 if(status === "available"){
                     setStatus("choosen");
-                    setSeat(1, "listSeatIds", seat.id);
+                    handleSeatsId(1, seat.id);
                 }else{
                     setStatus("available");
-                    setSeat(2, "listSeatIds", seat.id);
+                    handleSeatsId(2, seat.id);
                 }
             }}
         >
