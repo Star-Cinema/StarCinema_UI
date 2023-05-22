@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ChooseSeats from "./ChooseSeats";
 function createSeats() {
     const seats = [];
@@ -32,13 +32,16 @@ function createSeats() {
 
 // Sử dụng hàm để tạo danh sách ghế
 const seatList = createSeats();
-function ChooseTime({ listTimes, setData, setSeat }) {
+function ChooseTime({ listTimes, setData }) {
     const [timeIndex, setTimeIndex] = useState(null);
+    useEffect(() => {
+        setTimeIndex(null);
+    }, [listTimes]);
     return (
         <div>
             <h4>Choose Time</h4>
             <ul className="choose-dates items-list-nav">
-                {listTimes.map((time, index) => (
+                {listTimes.dates.map((time, index) => (
                     <li
                         key={index}
                         className={index === timeIndex ? "selected" : null}
@@ -50,22 +53,20 @@ function ChooseTime({ listTimes, setData, setSeat }) {
                                 setData("scheduleId", time.id);
                             }}
                         >
-                            {time.date.getHours() +
+                            {new Date(time).getHours() +
                                 ":" +
-                                time.date.getMinutes()}
+                                new Date(time).getMinutes()}
                         </button>
                     </li>
                 ))}
             </ul>
             <hr></hr>
-            <h4>Choose Seat(s)</h4>
             {timeIndex === null ? (
                 ""
             ) : (
                 <ChooseSeats
                     listSeats={seatList}
                     setData={setData}
-                    setSeat={setSeat}
                 />
             )}
         </div>

@@ -1,29 +1,8 @@
 import { useState, useEffect } from "react";
-import image from "../../img/docter.png";
 import ChooseDate from "./ChooseDate";
 import NavFilms from "./NavFilms";
-import ChooseServices from "./ChooseServices";
-import Pay from "./Pay";
 
-export default function BookablesPage({ filmId }) {
-    const dataTabs = [
-        {
-            id: 1,
-            name: "CHOOSE TIME",
-        },
-        {
-            id: 2,
-            name: "CHOOSE SEAT(S)",
-        },
-        {
-            id: 3,
-            name: "PAYMENT",
-        },
-        {
-            id: 4,
-            name: "GET TICKET",
-        },
-    ];
+export default function BookablesPage() {
     const listFilms = [
         {
             id: 1,
@@ -57,12 +36,17 @@ export default function BookablesPage({ filmId }) {
         },
     ];
     // const bookablesInGroup = data.bookables.filter((b) => b.group === group);
+    const [films, setFilms] = useState(null);
+    useEffect(() => {
+        fetch("https://localhost:7113/api/Films")
+            .then((resp) => resp.json())
+            .then((data) => setFilms(data.data.listItem));
+
+    }, []);
     const [filmSelected, setFilmSelected] = useState(null);
     const getIdFilm = () => {
-        return(
-            filmSelected === null ? "" : filmSelected.id
-        );
-    }
+        return filmSelected === null ? "" : filmSelected.id;
+    };
     const [dataForm, setFormData] = useState({
         filmId: getIdFilm(),
         userId: "",
@@ -70,7 +54,7 @@ export default function BookablesPage({ filmId }) {
         listSeatIds: [],
         listServices: [],
     });
-    
+
     useEffect(() => {
         setFormData({
             filmId: getIdFilm(),
@@ -80,53 +64,20 @@ export default function BookablesPage({ filmId }) {
             listServices: [],
         });
     }, [filmSelected]);
-
+    
     const handleChange = (name, value) => {
         setFormData({ ...dataForm, [name]: value });
     };
-    const handleScheduleId = (type, name, value) => {
-        if (type === 1) {
-            setFormData({
-                ...dataForm,
-                [name]: [...dataForm.listSeatIds, value],
-            });
-        } else {
-            let arrayIdSeatsNew = dataForm.listSeatIds.filter(
-                (item) => item !== value
-            );
-            console.log(arrayIdSeatsNew);
-            setFormData({ ...dataForm, [name]: [...arrayIdSeatsNew] });
-        }
-    };
-    console.log(dataForm);
+    console.log("Data form: " + dataForm.listSeatIds);
     // const [TabIndex, setTabIndex] = useState(0);
     return (
         <div className="container booking-page">
             <h1>BOOKING</h1>
             <div className="main-booking row">
                 <div className="nav-films col col-xxl-4">
-                    <NavFilms listFilms={listFilms} setFilm={setFilmSelected} />
+                    <NavFilms listFilms={films === null ? listFilms : films} setFilm={setFilmSelected} />
                 </div>
                 <div className="content-booking col col-xxl-8 row">
-                    {/* <div className="row">
-                        <ul className="bookables items-list-nav">
-                            {dataTabs.map((tab, index) => (
-                                <li
-                                    key={tab.id}
-                                    className={
-                                        index === TabIndex ? "selected" : null
-                                    }
-                                >
-                                    <button
-                                        className="btn"
-                                        onClick={() => setTabIndex(index)}
-                                    >
-                                        {tab.name}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div> */}
                     {filmSelected === null ? (
                         <div className="bottom row">
                             <p className="please-film">Vui lòng chọn film</p>
@@ -136,8 +87,8 @@ export default function BookablesPage({ filmId }) {
                             <div className="movie-booking row">
                                 <h4>Choose Date</h4>
                                 <ChooseDate
+                                    film = {filmSelected}
                                     setData={handleChange}
-                                    setSeat={handleScheduleId}
                                 />
                                 {/* <ChooseServices />
                                 <Pay /> */}
