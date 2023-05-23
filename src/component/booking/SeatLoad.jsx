@@ -5,7 +5,7 @@ function SeatLoad({ seat, handleSeatsId }) {
     // const [TabIndex, setTabIndex] = useState(0);
     let seatClass = "btn btn-info seat-available";
     let isButtonDisabled = false;
-    if (status === "unavailable") {
+    if (status === "Unavailable") {
         seatClass = "btn btn-info seat-unavailable";
         isButtonDisabled = true;
     }
@@ -28,7 +28,7 @@ function SeatLoad({ seat, handleSeatsId }) {
                 }
             }}
         >
-            {seat.name}
+            {seat.seatName}
         </button>
     );
 }

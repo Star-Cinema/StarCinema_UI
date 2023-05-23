@@ -4,25 +4,63 @@ import Pay from "./Pay";
 import SeatLoad from "./SeatLoad";
 import ShowCase from "./ShowCase";
 const rows = [0, 10, 20, 30];
-function ChooseSeats({ listSeats, setData }) {
+function ChooseSeats({ listSeats, setData, price, postData }) {
+    const [servicesSelected, setServicesSelected] = useState([]);
+    const [services, setServices] = useState(null);
+    const [listServicesS, setListServicesS] = useState([]);
+    useEffect(() => {
+        setData("listServiceId", servicesSelected);
+        if(services !== null){
+            console.log("services: " + services[0].id);
+            console.log("servicesId: " + servicesSelected);
+            const selectedData = services.filter(item => servicesSelected.includes((item.id).toString()));
+            setListServicesS(selectedData);
+        }
+        
+    }, [servicesSelected]);
+    const handleServicesId = (type, value) => {
+        if (type === 1) {
+            const newArray = [...servicesSelected]; // Create a new array using spread operator
+            newArray.push(value); // Add the new element to the new array
+            setServicesSelected(newArray);
+        } else {
+            let newArray =
+                servicesSelected === null
+                    ? servicesSelected
+                    : servicesSelected.filter((item) => item !== value);
+            setServicesSelected([...newArray]);
+        }
+    };
+
     const [seatsSelected, setSeatsSelected] = useState([]);
     useEffect(() => {
-        setData("listSeatIds", seatsSelected);
-        console.log(seatsSelected);
+        setData("listSeatId", seatsSelected);
+    }, [seatsSelected]);
+    
+    useEffect(() => {
+        if (seatsSelected === null) {
+        } else {
+            fetch(
+                "https://localhost:7113/Service?PageIndex=0&PageSize=10&SortColumn=Name&SortOrder=ASC"
+            )
+                .then((resp) => resp.json())
+                .then((data) => {
+                    setServices(data.data);
+                });
+        }
     }, [seatsSelected]);
     const handleSeatsId = (type, value) => {
         if (type === 1) {
             const newArray = [...seatsSelected]; // Create a new array using spread operator
             newArray.push(value); // Add the new element to the new array
-            // console.log(value);
             setSeatsSelected(newArray);
         } else {
-            let arrayIdSeatsNew = seatsSelected === null ? seatsSelected : seatsSelected.filter(
-                (item) => item !== value
-            );
+            let arrayIdSeatsNew =
+                seatsSelected === null
+                    ? seatsSelected
+                    : seatsSelected.filter((item) => item !== value);
             setSeatsSelected([...arrayIdSeatsNew]);
         }
-        
     };
     return (
         <div>
@@ -51,9 +89,7 @@ function ChooseSeats({ listSeats, setData }) {
                                                 seat={seat}
                                                 // setData={setData}
                                                 // setSeat={setSeat}
-                                                handleSeatsId={
-                                                    handleSeatsId
-                                                }
+                                                handleSeatsId={handleSeatsId}
                                             />
                                         );
                                     })}
@@ -70,9 +106,7 @@ function ChooseSeats({ listSeats, setData }) {
                                             <SeatLoad
                                                 key={index}
                                                 seat={seat}
-                                                handleSeatsId={
-                                                    handleSeatsId
-                                                }
+                                                handleSeatsId={handleSeatsId}
                                                 // setSeat={setSeat}
                                             />
                                         );
@@ -90,9 +124,7 @@ function ChooseSeats({ listSeats, setData }) {
                                             <SeatLoad
                                                 key={index}
                                                 seat={seat}
-                                                handleSeatsId={
-                                                    handleSeatsId
-                                                }
+                                                handleSeatsId={handleSeatsId}
                                                 // setSeat={setSeat}
                                             />
                                         );
@@ -104,8 +136,22 @@ function ChooseSeats({ listSeats, setData }) {
                 <ShowCase />
             </div>
 
-            <ChooseServices />
-            <Pay />
+            {seatsSelected.length > 0 ? (
+                <div>
+                    <ChooseServices
+                        services={services}
+                        handleServicesId={handleServicesId}
+                    />
+                    <Pay
+                        seats={seatsSelected}
+                        price={price}
+                        services={listServicesS}
+                        postData = {postData}
+                    />
+                </div>
+            ) : (
+                ""
+            )}
         </div>
     );
 }
