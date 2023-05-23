@@ -1,7 +1,5 @@
-import { Layout, Space } from "antd";
-import { Carousel, Image, Card, Tabs, Row, Col, Affix } from "antd";
-const { Header, Footer, Sider, Content } = Layout;
-const { Meta } = Card;
+import { Carousel, Image, Card } from "antd";
+
 
 const carouselStyle = {
   position: "absolute",
@@ -31,18 +29,12 @@ const Banner = () => (
         />
       </div>
       <div style={{ position: "relative" }}>
-        <div style={carouselStyle}>
-          <h1 style={{ color: "white" }}>STAR CINEMA</h1>
-          <h2 style={{ color: "white" }}>TOP CINEMA QUALIFIED</h2>
-          <h3 style={{ color: "white" }}>
-            We provide the high quality film with affordable price
-          </h3>
-        </div>
+        
         <Image
           width={"100%"}
           preview={false}
           height={500}
-          src="https://shorturl.at/hP348"
+          src="./image/banner2.jpg"
         />
       </div>
       <div style={{ position: "relative" }}>
@@ -58,22 +50,16 @@ const Banner = () => (
           width={"100%"}
           preview={false}
           height={500}
-          src="https://shorturl.at/acBWZ"
+          src="https://shorturl.at/hP348" 
         />
       </div>
       <div style={{ position: "relative" }}>
-        <div style={carouselStyle}>
-          <h1 style={{ color: "white" }}>STAR CINEMA</h1>
-          <h2 style={{ color: "white" }}>TOP CINEMA QUALIFIED</h2>
-          <h3 style={{ color: "white" }}>
-            We provide the high quality film with affordable price
-          </h3>
-        </div>
+        
         <Image
           width={"100%"}
           preview={false}
           height={500}
-          src="https://shorturl.at/jIUZ0"
+          src="./image/banner3.jpg"
         />
       </div>
     </Carousel>

@@ -1,18 +1,21 @@
 import { Tabs } from "antd";
-import NowShowing from "./NowShowing";
-import Upcoming from "./Upcoming";
+import { useState, useEffect } from "react";
+import FilmList from "./FilmList";
 
 const FilmTab = () => {
+  const [isNowFilm, setIsNowFilm] = useState(true);
+
   const onChange = (key) => {
-    console.log(key);
+    setIsNowFilm(!isNowFilm);
   };
+
   const items = [
     {
       key: "1",
       label: `NOW SHOWING`,
       children: (
         <>
-          <NowShowing />{" "}
+          <FilmList isNowFilm={isNowFilm} />{" "}
         </>
       ),
     },
@@ -21,7 +24,7 @@ const FilmTab = () => {
       label: `UPCOMING`,
       children: (
         <>
-          <Upcoming />{" "}
+          <FilmList isNowFilm={isNowFilm} />{" "}
         </>
       ),
     },
