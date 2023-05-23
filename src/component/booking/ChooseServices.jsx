@@ -1,14 +1,25 @@
 import Form from "react-bootstrap/Form";
 
-function ChooseServices() {
+function ChooseServices({ services, handleServicesId }) {
+    const handle = (event) => {
+        handleServicesId(1, event.target.value);
+     };
     return (
         <div className="choose-service">
-          <label fo="inputService" className="form-label">Services</label>
-            <Form.Select aria-label="Default select example" id="inputService">
+            <label fo="inputService" className="form-label">
+                Services
+            </label>
+            <Form.Select aria-label="Default select example" id="inputService" onChange={handle}>
                 <option>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                {services.map((service) => {
+                    return (
+                        <option
+                            value={service.id}
+                        >
+                            {service.name}
+                        </option>
+                    );
+                })}
             </Form.Select>
         </div>
     );
