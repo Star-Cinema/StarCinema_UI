@@ -33,18 +33,18 @@ import ChooseSeats from "./ChooseSeats";
 // Sử dụng hàm để tạo danh sách ghế
 // const seatList = createSeats();
 function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
-    const [listSeats, setListSeats] = useState(null);
     const [timeIndex, setTimeIndex] = useState(null);
-    useEffect(() => {
-        if (timeIndex === null) {
-        } else {
-            fetch(
-                `https://localhost:7113/api/Bookings/GetSeats?filmId=${idFilm}&scheduleId=${timeIndex}`
-            )
-                .then((resp) => resp.json())
-                .then((data) => setListSeats(data.data));
-        }
-    }, [timeIndex]);
+    // const [listSeats, setListSeats] = useState(null);
+    // useEffect(() => {
+    //     if (timeIndex === null) {
+    //     } else {
+    //         fetch(
+    //             `https://localhost:7113/api/Bookings/GetSeats?filmId=${idFilm}&scheduleId=${timeIndex}`
+    //         )
+    //             .then((resp) => resp.json())
+    //             .then((data) => setListSeats(data.data));
+    //     }
+    // }, [timeIndex]);
 
     useEffect(() => {
         setTimeIndex(null);
@@ -75,11 +75,10 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
             <hr></hr>
             {timeIndex === null ? (
                 ""
-            ) : listSeats === null ? (
-                " "
-            ) : (
+            ) :  (
                 <ChooseSeats
-                    listSeats={listSeats}
+                    timeIndex={timeIndex}
+                    idFilm={idFilm}
                     setData={setData}
                     price={price}
                     postData={postData}

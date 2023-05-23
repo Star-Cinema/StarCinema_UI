@@ -133,7 +133,7 @@ header a.btn {
 
 a.btn {
   text-decoration: none;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
 }
 
 .btn-delete {
@@ -153,7 +153,10 @@ a.btn {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-
+.header-top .btn:hover {
+  color: #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
 
 .btn-header:hover {
   border-color: var(--light-text);
@@ -258,7 +261,7 @@ footer.text-center.text-lg-start.text-white {
 
 #logo {
   width: 11rem;
-  border-radius: 27px;
+  border-radius: 10px;
 }
 
 .header-top {
@@ -270,8 +273,8 @@ footer.text-center.text-lg-start.text-white {
 }
 
 .choose-service {
-  border: 1px solid #ced4da;
-  border-radius: 21px;
+  /* border: 1px solid #ced4da;
+  border-radius: 21px; */
   padding: 1em;
   background: white;
 }
@@ -307,11 +310,11 @@ ul.list-group {
   background: white;
   padding: 1em 2em;
   border: 1px solid #ced4da;
-  border-radius: 21px;
+  /* border-radius: 21px; */
 }
 li.ng-scope {
   border: 1px solid #ced4da;
-  border-radius: 21px;
+  /* border-radius: 21px; */
 }
 .ShowCase {
   margin: 0 0 48px;
@@ -409,4 +412,30 @@ a {
 }
 header.p-3.text-white {
   border-radius: 0px;
+}
+
+header.p-3.text-white {
+  border-radius: 0px;
+  background: white;
+  border-bottom: 1px solid black;
+}
+
+button.btn.btn-outline-light.me-2 {
+  color: black;
+  border: 1px solid #ced4da;
+}
+
+a.list-group-item.movie {
+  border: none;
+}
+
+.content-booking.col.col-xxl-8.row {
+  margin-left: 0rem;
+}
+
+footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
+  background: white !important;
+  margin-top: 2rem;
+  border-top: 1px solid black;
+  border-radius: 7px;
 }

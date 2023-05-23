@@ -4,36 +4,7 @@ import NavFilms from "./NavFilms";
 import axios from 'axios';
 export default function BookablesPage() {
     const listFilms = [
-        {
-            id: 1,
-            name: "Fast X",
-            img: "https://cdn.galaxycine.vn/media/2023/5/9/450x300_1683602206164.jpg",
-        },
-        {
-            id: 2,
-            name: "Lật Mặt 6: Tấm Vé Định Mệnh",
-            img: "https://cdn.galaxycine.vn/media/2023/4/17/450wx300h_1681703427699.jpg",
-        },
-        {
-            id: 3,
-            name: "Con Nhót Mót Chồng",
-            img: "https://cdn.galaxycine.vn/media/2023/4/27/450x300_1682565516691.jpg",
-        },
-        {
-            id: 4,
-            name: "Guardians Of The Galaxy Vol.3",
-            img: "https://cdn.galaxycine.vn/media/2023/4/24/450x300_1682320154561.jpg",
-        },
-        {
-            id: 5,
-            name: "Doraemon: Nobita’s Sky Utopia 2023",
-            img: "https://cdn.galaxycine.vn/media/2023/5/15/doraemon-utopia-1_1684121820088.jpg",
-        },
-        {
-            id: 6,
-            name: "Già Gân Báo Thù",
-            img: "https://cdn.galaxycine.vn/media/2023/4/28/450_1682666859057.jpg",
-        },
+        
     ];
     // const bookablesInGroup = data.bookables.filter((b) => b.group === group);
     const [films, setFilms] = useState(null);
