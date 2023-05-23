@@ -258,6 +258,7 @@ footer.text-center.text-lg-start.text-white {
 
 #logo {
   width: 11rem;
+  border-radius: 27px;
 }
 
 .header-top {
@@ -405,4 +406,7 @@ a {
 
 .imgModify .ant-image-mask {
   display: none !important;
+}
+header.p-3.text-white {
+  border-radius: 0px;
 }
