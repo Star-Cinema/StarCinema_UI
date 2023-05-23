@@ -73,8 +73,8 @@ export default function BookablesPage() {
                 "https://localhost:7113/api/Bookings/CreateBookingByUser",
                 dataForm
             );
-            if(response.code === 200){
-                
+            if(response?.data?.code === 200){
+                window.location= response.data?.data;
             }
             console.log(response.data); // Process the response data
         } catch (error) {
