@@ -91,7 +91,7 @@ function ChooseDate({ setData, film, postData }) {
         fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}`)
             .then((resp) => resp.json())
             .then((data) => {
-                setPrice(data.data.listItem[0].ticket.price);
+                setPrice(data.data?.listItem[0]?.ticket?.price);
                 setDates(getDatesFromData(data));
                 setDateSelected(null);
             });
