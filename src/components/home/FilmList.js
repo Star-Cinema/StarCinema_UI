@@ -76,7 +76,7 @@ const FilmList = ({ isNowFilm }) => {
               pageSize: 6,
             }}
             itemLayout="vertical"
-            grid={{ gutter: 16, column: 3 }}
+            grid={{ gutter: 16, lg: 3, xs:1 }}
             dataSource={data}
             renderItem={(p) => (
               <List.Item>
@@ -96,7 +96,7 @@ const FilmList = ({ isNowFilm }) => {
                         width: 240,
                         marginBottom: "1em",
                       }}
-                      cover={<img alt="alt" src={p.image} />}
+                      cover={<img alt="alt" src={p.image} height={300} />}
                     >
                       <Meta title={p.name} description={p.category} />
                     </Card>

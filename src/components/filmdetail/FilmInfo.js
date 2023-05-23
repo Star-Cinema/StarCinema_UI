@@ -49,11 +49,6 @@ const FilmInfo = () => {
     return d.toLocaleDateString("en-US");
   }
 
-  function minusDate(date) {
-    const d = new Date(date);
-    d.setDate(d.getDate() - 1);
-    return d.toLocaleDateString("en-US");
-  }
 
   const loadFilmDetail = () => {
     setBusy(true);
@@ -132,9 +127,9 @@ const FilmInfo = () => {
               ]}
             />
             <Row>
-              <Col span={18}>
+              <Col lg={18} xs={24} >
                 <Row style={{ margin: "1.5em" }}>
-                  <Col span={8}>
+                  <Col lg={8} xs={24}>
                     <div>
                       <Image
                         preview={{ visible: false }}
@@ -144,7 +139,7 @@ const FilmInfo = () => {
                       />
                     </div>
                   </Col>
-                  <Col span={16} type="flex" align="left">
+                  <Col lg={16} xs={24} type="flex" align="left">
                     <div>
                       <h2>{data[0].name}</h2>
                       <Rate disabled defaultValue={5} />
@@ -223,7 +218,7 @@ const FilmInfo = () => {
                   </Row>
                 )}
 
-                <Row style={{ margin: "1.5em" }}>
+                {/* <Row style={{ margin: "1.5em" }}>
                   <Col span={24} type="flex" align="left">
                     <Divider>
                       <h2 style={{ color: "red" }}>NOW SHOWING</h2>
@@ -231,11 +226,11 @@ const FilmInfo = () => {
 
                     <Relate />
                   </Col>
-                </Row>
+                </Row> */}
               </Col>
 
               {/* RIGHT SIDE BAR */}
-              <Col span={6} type="flex" align="left">
+              <Col lg={6} xs={0} type="flex" align="left">
                 <div>
                   <Advertise />
                 </div>
