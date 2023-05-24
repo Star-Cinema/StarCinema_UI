@@ -1,25 +1,21 @@
 import './App.css';
 import Home from './pages/Home';
-// import { Route, Routes, Router, BrowserRouter } from 'react-router-dom'
 import FilmDetail from './pages/FilmDetail';
-import TestPayment from './pages/TestPayment';
 import VnPayReturn from './pages/VnPayReturn';
 import Chat from './pages/Chat';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import UserDetailsPage from "../src/component/user_details/UserDetailsPage";
-import logo from "./img/logo.png";
-import Header from "./components/home/Header";
-import BookingsPage from "./component/booking/BookingPage";
-import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
-import NewsDetail from "./pages/NewsDetails";
-import AppFooter from "./components/home/AppFooter";
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import Profile from "../src/component/user_details/Profile";
+import Login from '../src/pages/Login/Login.js'
+import Register from '../src/pages/Register/Register.js'
+import NewsDetail from '../src/pages/NewsDetails.js'
+import BookingsPage from '../src/component/booking/BookingPage.jsx'
+import Verify from './component/user_details/Verify';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import MessageProvider from './Context/MessageContext';
+
 function App() {
   return (
-    <Router>
-      <div>
-        <Header />
-      </div>
+    <BrowserRouter>
       <MessageProvider>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -27,16 +23,19 @@ function App() {
           <Route path="/newsdetail" element={<NewsDetail />} />
           <Route path="/booking" element={<BookingsPage />} />
 
-          <Route path="/userdetails" element={<UserDetailsPage />} />
-          <Route path="/testPayment" element={<TestPayment />} />
+          <Route path="/my" element={<Profile />} />
+          <Route path="/verify" element={<Verify />} />
+
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+
           <Route path="/vnpay_return" element={<VnPayReturn />} />
           <Route path="/chat" element={<Chat />} />
-          {/* <Route path="/bookables" element={<BookablesPage/>} />
-          <Route path="/users" element={<UsersPage/>} /> */}
         </Routes>
       </MessageProvider>
-      <AppFooter />
-    </Router>
+    </BrowserRouter>
   );
 }
 

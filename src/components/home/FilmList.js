@@ -5,6 +5,9 @@ import axios from "axios";
 
 const { Meta } = Card;
 
+
+// VYVNK1 COMPONENT TO DISPLAY NOWSHOWING / UPCOMING FILM
+
 const FilmList = ({ isNowFilm }) => {
   // FOR TESTING LAYOUT AND PAGINATION
   //   const poster = Array.from({ length: 100 }).map((_, i) => ({
@@ -17,6 +20,8 @@ const FilmList = ({ isNowFilm }) => {
   const [nowfilmAPI, setNowFilmAPI] = useState([]);
   const data = [];
   const [isBusy, setBusy] = useState(true);
+
+  // VYVNK1 GET API OF NOW SHOWING FILM
 
   const loadNowFilm = () => {
     setBusy(true);
@@ -34,6 +39,7 @@ const FilmList = ({ isNowFilm }) => {
     fetchData();
   };
 
+  // VYVNK1 GET API OF UPCOMING FILM 
   const loadUpFilm = () => {
     setBusy(true);
     async function fetchData() {
@@ -65,6 +71,7 @@ const FilmList = ({ isNowFilm }) => {
     });
   }
 
+  // VYVNK1 UI OF LIST FILM ON HOME PAGE
   return (
     <>
       {isBusy ? (
@@ -76,7 +83,7 @@ const FilmList = ({ isNowFilm }) => {
               pageSize: 6,
             }}
             itemLayout="vertical"
-            grid={{ gutter: 16, column: 3 }}
+            grid={{ gutter: 16, lg: 3, xs:1 }}
             dataSource={data}
             renderItem={(p) => (
               <List.Item>
@@ -96,7 +103,7 @@ const FilmList = ({ isNowFilm }) => {
                         width: 240,
                         marginBottom: "1em",
                       }}
-                      cover={<img alt="alt" src={p.image} />}
+                      cover={<img alt="alt" src={p.image} height={300} />}
                     >
                       <Meta title={p.name} description={p.category} />
                     </Card>

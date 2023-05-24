@@ -2,6 +2,8 @@ import { Tabs } from "antd";
 import { useState, useEffect } from "react";
 import FilmList from "./FilmList";
 
+
+//VYVNK1 COMPONENT FILMTAB CONTAINS NOWSHOWING / UPCOMING FILM
 const FilmTab = () => {
   const [isNowFilm, setIsNowFilm] = useState(true);
 

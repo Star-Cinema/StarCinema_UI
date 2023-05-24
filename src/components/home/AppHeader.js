@@ -1,5 +1,7 @@
 import { Affix } from "antd";
 import { Header } from "antd/es/layout/layout";
+
+//VYVNK1 COMPONENT HEADER
 const AppHeader = () => {
   return (
     <Affix offsetTop={0} onChange={(affixed) => console.log(affixed)}>

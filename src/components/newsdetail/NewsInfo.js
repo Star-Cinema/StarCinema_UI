@@ -9,6 +9,8 @@ import {
 import { useLocation } from "react-router-dom";
 import Advertise from "../home/Advertise";
 
+//VYVNK1 COMPONENT NEWSINFO -  DISPLAY DETAIL OF NEWS
+
 const NewsInfo = () => {
   const location = useLocation();
 
@@ -26,8 +28,8 @@ const NewsInfo = () => {
         ]}
       />
       <Row>
-        <Col span={3}></Col>
-        <Col span={14}>
+        <Col span={3} ></Col>
+        <Col lg={14} xs={24}>
           <Row>
             <Col
               type="flex"
@@ -47,7 +49,7 @@ const NewsInfo = () => {
               <Image
                 style={{ margin: "0.5em" }}
                 preview={{ visible: false }}
-                width={600}
+                width={400}
                 src={location.state.src}
                 onClick={() => true}
               />
@@ -117,7 +119,7 @@ const NewsInfo = () => {
         </Col>
 
         {/* RIGHT SIDE BAR */}
-        <Col span={7} type="flex" align="left">
+        <Col lg={7} xs={0} type="flex" align="left">
           <div>
             <Advertise />
           </div>

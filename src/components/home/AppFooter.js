@@ -7,32 +7,33 @@ import {
 } from "@ant-design/icons";
 
 
+//VYVNK1 COMPONENT FOOTER
 const AppFooter = () => {
 
   return (
     <>
       <Footer style={{ backgroundColor: "rgba(225, 238, 246, 0.7)" }}>
         <Row>
-          <Col span={6} type="flex" align="left">
+          <Col lg={6} xs={12}type="flex" align="left">
             <h3>Address</h3>
             <p>123 Phan Dang Luu</p>
             <p>Da Nang, Viet Nam</p>
           </Col>
-          <Col span={6} type="flex" align="left">
+          <Col lg={6} xs={12} type="flex" align="left">
             <h3>Services</h3>
             <p>Email Marketing</p>
             <p>Campaigns</p>
             <p>Branding</p>
             <p>Offline</p>
           </Col>
-          <Col span={6} type="flex" align="left">
+          <Col lg={6} xs={12} type="flex" align="left">
             <h3>About</h3>
             <p>Our Story</p>
             <p>Benefits</p>
             <p>Team</p>
             <p>Careers</p>
           </Col>
-          <Col span={6} type="flex" align="left">
+          <Col lg={6} xs={12} type="flex" align="left">
             <h3>Help</h3>
             <p>FAQs</p>
             <p>Contact Us</p>

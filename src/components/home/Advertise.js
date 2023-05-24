@@ -1,4 +1,4 @@
-import {Image, Affix } from "antd";
+import { Image, Affix } from "antd";
 import "../../App.css";
 const data = [
   {
@@ -10,17 +10,19 @@ const data = [
   //   src: "/image/side3.jpg",
   // },
 ];
+
+//VYVNK1 COMPONENT ADVERTISE ON RIGHT SIDE BAR
 const Advertise = () => {
   return (
     <>
-      <Affix offsetTop={60}>
-        <div  className="imgModify" style={{ margin: "0.5em" }}>
+      <Affix offsetTop={80}>
+        <div className="imgModify" style={{ margin: "1.5em" }}>
           {data.map((c) => (
             <Image
-           
-              style={{ margin: "0.5em" }}
+              style={{ margin: "1em" }}
               preview={{ visible: false }}
-              width={250}
+              width={230}
+              height={300}
               src={c.src}
               onClick={() => true}
             />
