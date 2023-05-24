@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 import axios from 'axios'
 
+//Login to website HungTD34
 function Login() {
     const navigate = useNavigate()
     const [errors, setErrors] = useState()
@@ -11,6 +12,8 @@ function Login() {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+
+    //Check validation form HungTD34
     const validate = () => {
         const error = {}
         if (username == '') error.username = 'Email không được để trống!'
@@ -20,6 +23,7 @@ function Login() {
         return Object.keys(error).length === 0;
     }
 
+    //Request API to login HungTD34
     const handleLogin = async () => {
         const user = {
             email: username,
@@ -28,10 +32,11 @@ function Login() {
 
         if (validate()) {
             var rs = await axios.post("https://localhost:7113/api/auth/login", user)
-            console.log(rs.data)
-            if (rs.data.code == 200) {
+            console.log(rs?.data)
+            if (rs?.data?.code == 200) {
                 const user = jwtDecode(rs.data.data)
                 console.log(user)
+                //Check that the logged in account is of User
                 if(user.role == "user")
                 {
                     sessionStorage.setItem('token', rs.data.data)
@@ -39,9 +44,10 @@ function Login() {
                 }
                 else alert("This website for user")
             }
-            else alert(rs.data.message)
+            else alert(rs?.data?.message)
         }
     }
+
     return (
         <div className='main-login'>
             <div className='login-header'>ĐĂNG NHẬP</div>

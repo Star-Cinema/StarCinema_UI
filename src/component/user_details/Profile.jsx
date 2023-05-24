@@ -7,8 +7,13 @@ import Header from "../../components/home/Header.jsx";
 import AppFooter from "../../components/home/AppFooter.js";
 import './Profile.css'
 import { useNavigate } from "react-router-dom";
+import ChangePass from "./ChangePass.js";
+
+//Show profile of user HungTD34
 function Profile() {
     const navigate = useNavigate()
+
+    //Check login HungTD34
     if(!sessionStorage.getItem("token")){
         return (
             <div className="main-profile">
@@ -45,6 +50,9 @@ function Profile() {
                         </Tab>
                         <Tab eventKey="transaction" title="Lịch sử giao dịch">
                             <Transactions />
+                        </Tab>
+                        <Tab eventKey="change-pass" title="Đổi mật khẩu">
+                            <ChangePass />
                         </Tab>
                     </Tabs>
                     {/* <div className="list-films">

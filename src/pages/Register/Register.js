@@ -3,6 +3,7 @@ import './Register.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+//Register new account HungTD34
 function Register() {
     const navigate = useNavigate()
     const [errors, setErrors] = useState()
@@ -12,6 +13,8 @@ function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [repassword, setRePassword] = useState('')
+
+    //Check validation form HungTD34
     const validate = () => {
         const error = {}
         if (name == '') error.name = 'Họ và tên không được để trống!'
@@ -23,6 +26,7 @@ function Register() {
         return Object.keys(error).length === 0;
     }
 
+    //Request API to register HungTD34
     const handleRegister = async () => {
         const user = {
             Name:name,

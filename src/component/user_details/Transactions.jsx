@@ -1,5 +1,7 @@
 
 import { TbAlertCircle } from "react-icons/tb";
+
+//Show history transactions of user HungTD34
 function Transactions() {
     return (
         <table className="table">

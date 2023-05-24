@@ -4,6 +4,7 @@ import axios from "axios";
 import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
 
+//Show infomation of user HungTD34
 function InforUser() {
     const [form] = Form.useForm()
     const [data, setData] = useState()
@@ -12,7 +13,9 @@ function InforUser() {
         fecthData()
     }, [])
 
+    //Get data when page load HungTD34
     const fecthData = async () => {
+        //Get data by token HungTD34
         var res = await axios.get("https://localhost:7113/api/my", { headers: { "Authorization": `Bearer ${sessionStorage.getItem('token')}` } })
 
         form.setFieldsValue(
@@ -31,6 +34,7 @@ function InforUser() {
         setData(res?.data?.data)
     }
 
+    //Update infomation when submit form HungTD34
     const handleFinish = async () => {
         var data = form.getFieldValue()
 
@@ -59,10 +63,13 @@ function InforUser() {
         }
     }
 
+    //Request verify email if email is not verify HungTD34
     const handleVerify = async () => {
         var res = await axios.get("https://localhost:7113/api/my/verify", { headers: { "Authorization": `Bearer ${sessionStorage.getItem('token')}` } })
         if(res?.data.code == 200) alert("Check your email")
     }
+
+    //GUI HungTD34
     return (
         <Form
             labelCol={{

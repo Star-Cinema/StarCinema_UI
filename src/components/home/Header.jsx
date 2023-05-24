@@ -6,6 +6,11 @@ import jwtDecode from "jwt-decode";
 function Header() {
     const [user, setUser] = useState(sessionStorage.getItem("token") && jwtDecode(sessionStorage.getItem("token")))
     console.log(user)
+
+    const handleLogout = () => {
+        sessionStorage.removeItem("token")
+        window.location = "/"
+    }
     return (
         <header className="p-3 text-white">
             <div className="header-top">
@@ -16,7 +21,7 @@ function Header() {
                     >
                         {/* <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
             <use xlink:href="#bootstrap"></use></svg> */}
-                        <img id="logo" src={logo} alt="Girl in a jacket" style={{marginLeft:"40px"}}></img>
+                        <img id="logo" src={logo} alt="Girl in a jacket" style={{ marginLeft: "40px" }}></img>
                     </a>
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -40,33 +45,73 @@ function Header() {
                             className="form-control form-control-dark"
                             placeholder="Search..."
                             aria-label="Search"
-                            style={{height:"40px"}}
+                            style={{ height: "40px" }}
                         ></input>
                     </form>
                     {
                         user ?
-                            <Link to={'/my'}>
-                                <img src="https://banner2.cleanpng.com/20180402/ojw/kisspng-united-states-avatar-organization-information-user-avatar-5ac20804a62b58.8673620215226654766806.jpg"
-                                    style={{ height: "40px", width: "40px", objectFit: "cover", borderRadius: "50px" ,border:"1px solid #000", marginRight:"5px"}}
-                                />
-                                <span style={{ color: "#000" }}>{user?.name}</span>
-                            </Link> :
+                            <>
+                                <div className="dropdown" >
+                                    {/* <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" */}
+                                    <button className="" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                        style={{ color: "#000", backgroundColor: "#fff", border: "none", display: "flex", alignItems: "center" }}
+                                    >
+
+                                        <img src="https://banner2.cleanpng.com/20180402/ojw/kisspng-united-states-avatar-organization-information-user-avatar-5ac20804a62b58.8673620215226654766806.jpg"
+                                            style={{ height: "40px", width: "40px", objectFit: "cover", borderRadius: "50px", border: "1px solid #000", marginRight: "5px" }}
+                                        />
+                                        <span style={{ color: "#000", fontSize: "23px" }}>{user?.name}</span>
+
+                                    </button>
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="/my">Thông tin cá nhân</a></li>
+                                        <li><a className="dropdown-item" onClick={() => handleLogout()}>Đăng xuất</a></li>
+                                    </ul>
+                                </div>
+                            </>
+                            // <Link to={'/my'} style={{
+                            //     display: "flex",
+                            //     alignItems: "center"
+                            // }}>
+                            //     <img src="https://banner2.cleanpng.com/20180402/ojw/kisspng-united-states-avatar-organization-information-user-avatar-5ac20804a62b58.8673620215226654766806.jpg"
+                            //         style={{ height: "40px", width: "40px", objectFit: "cover", borderRadius: "50px", border: "1px solid #000", marginRight: "5px" }}
+                            //     />
+                            //     <span style={{ color: "#000" }}>{user?.name}</span>
+                            // </Link> 
+                            :
                             <div className="text-end">
-                                <button
-                                    type="button"
-                                    className="btn btn-outline-light me-2"
+                                <a href="/login"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "#000",
+                                    border:"1px solid #000",
+                                    padding:"10px",
+                                    borderRadius: "5px",
+                                    marginRight: "10px"
+                                }}
                                 >
                                     Login
-                                </button>
-                                <button type="button" className="btn btn-warning">
+                                </a>
+                                <a
+                                 href="/register"
+                                 style={{
+                                    textDecoration: "none",
+                                    color: "#000",
+                                    backgroundColor:"#fc3",
+                                    border:"1px solid #fc3",
+                                    padding:"10px",
+                                    borderRadius: "5px",
+                                    marginRight:"40px"
+                                }}
+                                >
                                     Sign-up
-                                </button>
+                                </a>
                             </div>
                     }
 
                 </div>
             </div>
-        </header>
+        </header >
     );
 }
 

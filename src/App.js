@@ -14,6 +14,7 @@ import Main from "./components/home/Main";
 import NewsDetail from '../src/pages/NewsDetails.js'
 import BookingsPage from '../src/component/booking/BookingPage.jsx'
 import Verify from './component/user_details/Verify';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 function App() {
     return (
         <BrowserRouter>
@@ -29,6 +30,7 @@ function App() {
 
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
             </Routes>
         </BrowserRouter>
     );
