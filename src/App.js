@@ -13,26 +13,28 @@ import BookingsPage from "./component/booking/BookingPage";
 import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
 import NewsDetail from "./pages/NewsDetails";
 import AppFooter from "./components/home/AppFooter";
+import MessageProvider from './Context/MessageContext';
 function App() {
   return (
     <Router>
       <div>
         <Header />
       </div>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/filmdetail" element={<FilmDetail />} />
-        <Route path="/newsdetail" element={<NewsDetail />} />
-        <Route path="/booking" element={<BookingsPage />} />
+      <MessageProvider>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/filmdetail" element={<FilmDetail />} />
+          <Route path="/newsdetail" element={<NewsDetail />} />
+          <Route path="/booking" element={<BookingsPage />} />
 
-        <Route path="/userdetails" element={<UserDetailsPage />} />
-        <Route path="/testPayment" element={<TestPayment />} />
-        <Route path="/vnpay_return" element={<VnPayReturn />} />
-        <Route path="/chat" element={<Chat />} />
-        {/* <Route path="/bookables" element={<BookablesPage/>} />
+          <Route path="/userdetails" element={<UserDetailsPage />} />
+          <Route path="/testPayment" element={<TestPayment />} />
+          <Route path="/vnpay_return" element={<VnPayReturn />} />
+          <Route path="/chat" element={<Chat />} />
+          {/* <Route path="/bookables" element={<BookablesPage/>} />
           <Route path="/users" element={<UsersPage/>} /> */}
-      </Routes>
-
+        </Routes>
+      </MessageProvider>
       <AppFooter />
     </Router>
   );
