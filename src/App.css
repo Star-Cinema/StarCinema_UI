@@ -260,8 +260,10 @@ footer.text-center.text-lg-start.text-white {
 }
 
 #logo {
-  width: 11rem;
+  width: 8rem;
   border-radius: 10px;
+
+  margin: 5px;
 }
 
 .header-top {
@@ -400,8 +402,12 @@ button.btn.btn-info.seat-unavailable {
 }
 
 .btn-header {
-  background: var(--primary);
-  border: 1px solid var(--button-bg);
+  border: none;
+  text-decoration: none;
+  color: #000;
+  
+  /* background: var(--primary);
+  border: 1px solid var(--button-bg); */
 }
 a {
   text-decoration: none !important;
@@ -418,6 +424,8 @@ header.p-3.text-white {
   border-radius: 0px;
   background: white;
   border-bottom: 1px solid black;
+
+  padding: 0!important;
 }
 
 button.btn.btn-outline-light.me-2 {
