@@ -1,17 +1,19 @@
+import './App.css';
+import Home from './pages/Home';
+// import { Route, Routes, Router, BrowserRouter } from 'react-router-dom'
+import FilmDetail from './pages/FilmDetail';
+import TestPayment from './pages/TestPayment';
+import VnPayReturn from './pages/VnPayReturn';
+import Chat from './pages/Chat';
 import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "react-router-dom";
-import UserDetailsPage from "./component/user_details/Profile";
-import logo from "./img/logo.png";
-import FilmDetail from "./pages/FilmDetail";
-import Home from "./pages/Home";
-import Header from "./components/home/Header";
-import BookingsPage from "./component/booking/BookingPage";
-import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
-import NewsDetail from "./pages/NewsDetails";
-import AppFooter from "./components/home/AppFooter";
+import Profile from "../src/component/user_details/Profile";
 import Login from '../src/pages/Login/Login.js'
 import Register from '../src/pages/Register/Register.js'
 import Main from "./components/home/Main";
 // import { Header } from "antd/es/layout/layout";
+import NewsDetail from '../src/pages/NewsDetails.js'
+import BookingsPage from '../src/component/booking/BookingPage.jsx'
+import Verify from './component/user_details/Verify';
 function App() {
     return (
         <BrowserRouter>
@@ -21,7 +23,8 @@ function App() {
                 <Route path="/newsdetail" element={<NewsDetail />} />
                 <Route path="/booking" element={<BookingsPage />} />
 
-                <Route path="/my" element={<UserDetailsPage />} />
+                <Route path="/my" element={<Profile />} />
+                <Route path="/verify" element={<Verify />} />
 
 
                 <Route path="/login" element={<Login />} />

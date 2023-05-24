@@ -8,14 +8,14 @@ const Main = () => {
   return (
     <>
       <Row>
-        <Col span={18}>
+        <Col lg={18} xs={24}>
           <FilmTab />
 
           <News />
         </Col>
 
         {/* RIGHT SIDE */}
-        <Col span={6}>
+        <Col lg={6} xs={0}>
           <Advertise />
         </Col>
       </Row>

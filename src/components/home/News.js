@@ -31,7 +31,7 @@ const News = () => {
       <Divider>
         <h2 style={{ color: "#ad6800" }}>NEWS CORNER</h2>
       </Divider>
-      <Col span={6}>
+      <Col lg={6} xs={24}>
         {newsData.slice(0, 2).map((i) => (
           <Card
             style={{
@@ -51,7 +51,7 @@ const News = () => {
           </Card>
         ))}
       </Col>
-      <Col span={12} style={{ padding: "3em" }}>
+      <Col lg={12} xs={24} style={{ padding: "3em" }}>
         <Card
           style={{
             width: 400,
@@ -71,7 +71,7 @@ const News = () => {
           <Meta description={newsData[2].title} />
         </Card>
       </Col>
-      <Col span={6}>
+      <Col lg={6} xs={24}>
         {newsData.slice(3).map((i) => (
           <Card
             style={{

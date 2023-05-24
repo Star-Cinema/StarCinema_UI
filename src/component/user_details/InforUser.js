@@ -61,7 +61,7 @@ function InforUser() {
 
     const handleVerify = async () => {
         var res = await axios.get("https://localhost:7113/api/my/verify", { headers: { "Authorization": `Bearer ${sessionStorage.getItem('token')}` } })
-        console.log(res?.data)
+        if(res?.data.code == 200) alert("Check your email")
     }
     return (
         <Form
@@ -165,7 +165,10 @@ function InforUser() {
                 </Upload>
             </Form.Item> */}
             <Form.Item style={{ textAlign: "center" }}>
-                <Button type="default" style={{ height: "48px", color: "#000" }} onClick={() => handleVerify()}>Verify</Button>
+                {
+                    !data?.isEmailVerified&&
+                    <Button type="default" style={{ height: "48px", color: "#000" }} onClick={() => handleVerify()}>Verify</Button>
+                }
                 <Button htmlType="submit" type="primary" style={{ height: "48px", backgroundColor: "#fc3", color: "#000" }}>Cập nhật</Button>
             </Form.Item>
         </Form>

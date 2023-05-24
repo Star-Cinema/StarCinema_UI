@@ -14,13 +14,13 @@ const Advertise = () => {
   return (
     <>
       <Affix offsetTop={60}>
-        <div  className="imgModify" style={{ margin: "0.5em" }}>
+        <div  className="imgModify" style={{ margin: "1.5em" }}>
           {data.map((c) => (
             <Image
            
-              style={{ margin: "0.5em" }}
+              style={{ margin: "1em" }}
               preview={{ visible: false }}
-              width={250}
+              width={230}
               src={c.src}
               onClick={() => true}
             />

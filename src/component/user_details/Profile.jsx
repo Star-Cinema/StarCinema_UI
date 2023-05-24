@@ -7,7 +7,7 @@ import Header from "../../components/home/Header.jsx";
 import AppFooter from "../../components/home/AppFooter.js";
 import './Profile.css'
 import { useNavigate } from "react-router-dom";
-function UserDetailsPage() {
+function Profile() {
     const navigate = useNavigate()
     if(!sessionStorage.getItem("token")){
         return (
@@ -73,4 +73,4 @@ function UserDetailsPage() {
     );
 }
 
-export default UserDetailsPage;
+export default Profile;
