@@ -1,43 +1,13 @@
 import { useState, useEffect } from "react";
 import ChooseTime from "./ChooseTime";
 
-const dates = [
-    new Date("2022-03-25"),
-    new Date("2022-03-24"),
-    new Date("2022-03-23"),
-    new Date("2022-03-22"),
-    new Date("2022-03-21"),
-];
-const times = [
-    {
-        id: "1",
-        date: new Date(1776, 6, 4, 12, 30, 0, 0),
-    },
-    {
-        id: "2",
-        date: new Date(1776, 6, 4, 7, 0, 0, 0),
-    },
-    {
-        id: "3",
-        date: new Date(1776, 6, 4, 8, 0, 0, 0),
-    },
-    {
-        id: "4",
-        date: new Date(1776, 6, 4, 14, 30, 0, 0),
-    },
-    {
-        id: "5",
-        date: new Date(1776, 6, 4, 17, 30, 0, 0),
-    },
-];
-
 function getDatesFromData(data) {
     const newDates = [];
     data.data.listItem.map((date) => {
         let d = date.startTime;
         newDates.push(d);
     });
-    newDates.sort((a, b) => b - a);
+    // newDates.sort((a, b) =>  - b);
     const uniqueList = [];
 
     newDates.forEach((date) => {
@@ -117,7 +87,7 @@ function ChooseDate({ setData, film, postData }) {
                                           setDateSelected(date);
                                       }}
                                   >
-                                      {days[new Date(date.dates[0].date).getDay()]}
+                                      {days[new Date(date.dates[0].date).getDay()] + " " + (new Date(date.dates[0].date).getDate()) + "/" + (new Date(date.dates[0].date).getMonth())}
                                   </button>
                               </li>
                           ))}
