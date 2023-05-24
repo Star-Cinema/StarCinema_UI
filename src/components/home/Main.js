@@ -2,8 +2,9 @@ import { Row, Col, Card } from "antd";
 import FilmTab from "./FilmTab";
 import News from "./News";
 import Advertise from "./Advertise";
-
 const { Meta } = Card;
+
+// VYVNK1 COMPONENT MAIN ON HOMEPAGE - DISPLAY MAIN CONTENTS
 const Main = () => {
   return (
     <>

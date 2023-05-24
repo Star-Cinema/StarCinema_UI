@@ -3,6 +3,7 @@ import logo from "../../img/logo.png"
 import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
 import { useState } from "react";
 import jwtDecode from "jwt-decode";
+import { Affix } from "antd";
 function Header() {
     const [user, setUser] = useState(sessionStorage.getItem("token") && jwtDecode(sessionStorage.getItem("token")))
     console.log(user)
@@ -12,6 +13,7 @@ function Header() {
         window.location = "/"
     }
     return (
+        <Affix offsetTop={0} onChange={(affixed) => console.log(affixed)}>
         <header className="p-3 text-white">
             <div className="header-top">
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -111,7 +113,8 @@ function Header() {
 
                 </div>
             </div>
-        </header >
+        </header>
+        </Affix>
     );
 }
 
