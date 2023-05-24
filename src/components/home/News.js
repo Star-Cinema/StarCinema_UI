@@ -2,6 +2,8 @@ import { Row, Tabs, Col, Card, Button, Divider } from "antd";
 import { Link } from "react-router-dom";
 
 const { Meta } = Card;
+
+// VYVNK1 COMPONENT NEWS
 const News = () => {
   const newsData = [
     {
@@ -25,7 +27,7 @@ const News = () => {
       title: "5 MOVIES TO WATCH THIS WEEK",
     },
   ];
-
+// VYVNK1 UI OF NEWS
   return (
     <Row>
       <Divider>

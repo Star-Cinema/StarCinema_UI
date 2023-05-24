@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 
 
+//VYVNK1 COMPONENT FOOTER
 const AppFooter = () => {
 
   return (

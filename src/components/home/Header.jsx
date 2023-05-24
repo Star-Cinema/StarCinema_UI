@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import logo from "../../img/logo.png"
 import { FaCalendarAlt, FaDoorOpen, FaUsers } from "react-icons/fa";
+import { Affix } from "antd";
 function Header() {
     return (
+        <Affix offsetTop={0} onChange={(affixed) => console.log(affixed)}>
         <header className="p-3 text-white">
             <div className="header-top">
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -53,6 +55,7 @@ function Header() {
                 </div>
             </div>
         </header>
+        </Affix>
     );
 }
 

@@ -10,6 +10,7 @@ const carouselStyle = {
   backgroundColor: "rgba(0,0,0,0.3)",
 };
 
+// VYVNK1 DISPLAY CAROUSEL ON HOMEPAGE
 const Banner = () => (
   <>
     <Carousel autoplay style={{ backgroundColor: "grey" }}>
