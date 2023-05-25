@@ -123,14 +123,16 @@ function Header() {
                                                 marginRight: "5px",
                                             }}
                                         />
-                                        <span
-                                            style={{
-                                                color: "#000",
-                                                fontSize: "23px",
-                                            }}
-                                        >
-                                            {user?.name}
-                                        </span>
+                                        <span style={{ color: "#000", fontSize: "23px" ,marginRight:"40px"}}>{user?.name}</span>
+
+//                                         <span
+//                                             style={{
+//                                                 color: "#000",
+//                                                 fontSize: "23px",
+//                                             }}
+//                                         >
+//                                             {user?.name}
+//                                         </span>
                                     </button>
                                     <ul className="dropdown-menu">
                                         <li>
