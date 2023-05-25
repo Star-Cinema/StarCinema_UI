@@ -12,6 +12,7 @@ import BookingsPage from '../src/component/booking/BookingPage.jsx'
 import Verify from './component/user_details/Verify';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import MessageProvider from './Context/MessageContext';
+import FilmSearch from './pages/FilmSearch';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/filmdetail" element={<FilmDetail />} />
           <Route path="/newsdetail" element={<NewsDetail />} />
+          <Route path="/filmsearch" element={<FilmSearch/>} />
           <Route path="/booking" element={<BookingsPage />} />
 
           <Route path="/my" element={<Profile />} />
