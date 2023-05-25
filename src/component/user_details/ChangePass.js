@@ -45,17 +45,21 @@ function ChangePass() {
         }
 
 
-        var res = await axios.put("https://localhost:7113/api/my/changepass",
-            pass,
-            {
-                headers: {
-                    "Authorization": `Bearer ${sessionStorage.getItem('token')}`,
-                    "Content-Type": "application/json"
-                }
-            })
-        if (res?.data?.code == 200) {
-            window.location.reload()
+        if(data.newPass == data.reNewPass)
+        {
+            var res = await axios.put("https://localhost:7113/api/my/changepass",
+                pass,
+                {
+                    headers: {
+                        "Authorization": `Bearer ${sessionStorage.getItem('token')}`,
+                        "Content-Type": "application/json"
+                    }
+                })
+            if (res?.data?.code == 200) {
+                window.location.reload()
+            }
         }
+        else alert("Mật khẩu nhập lại phải giống mật khẩu mới")
 
 
         // else console.log(res?.response?.data?.message)
