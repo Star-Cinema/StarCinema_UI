@@ -447,3 +447,10 @@ footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
   border-top: 1px solid black;
   border-radius: 7px;
 }
+
+.text-end {
+  text-align: right!important;
+  display: inherit;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}

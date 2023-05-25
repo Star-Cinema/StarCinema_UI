@@ -27,25 +27,31 @@ function ChooseServices({ services, handleServicesId }) {
                     return <option value={service.id}>{service.name}</option>;
                 })}
             </Form.Select> */}
-            <Select
-                mode="multiple"
-                style={{ width: "100%" }}
-                placeholder="select one country"
-                defaultValue={[]}
-                // onChange={handleChange}
-                onChange={handleChange}
-                optionLabelProp="label"
-            >
-                {services.map((service, index) => {
-                    return (
-                        <Option value={service.id} label={service.name} key={index}>
-                            <Space>
-                                {service.name}
-                            </Space>
-                        </Option>
-                    );
-                })}
-            </Select>
+            {services === null ? (
+                ""
+            ) : (
+                <Select
+                    mode="multiple"
+                    style={{ width: "100%" }}
+                    placeholder="select one country"
+                    defaultValue={[]}
+                    // onChange={handleChange}
+                    onChange={handleChange}
+                    optionLabelProp="label"
+                >
+                    {services.map((service, index) => {
+                        return (
+                            <Option
+                                value={service.id}
+                                label={service.name}
+                                key={index}
+                            >
+                                <Space>{service.name}</Space>
+                            </Option>
+                        );
+                    })}
+                </Select>
+            )}
         </div>
     );
 }
