@@ -49,11 +49,11 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
         if (seatsSelected === null) {
         } else {
             fetch(
-                "https://localhost:7113/Service?PageIndex=0&PageSize=10&SortColumn=Name&SortOrder=ASC"
+                "https://localhost:7113/api/Service/GetAllServices"
             )
                 .then((resp) => resp.json())
                 .then((data) => {
-                    setServices(data.data);
+                    setServices(data.data.listItem);
                 });
         }
     }, [seatsSelected]);
