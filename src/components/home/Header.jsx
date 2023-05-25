@@ -3,6 +3,7 @@ import logo from "../../img/logo.png";
 import { FaCalendarAlt, FaDoorOpen, FaUsers, FaSearch } from "react-icons/fa";
 import { useState } from "react";
 import jwtDecode from "jwt-decode";
+import axios from "axios";
 import { Affix } from "antd";
 function Header() {
     const [user, setUser] = useState(
@@ -15,6 +16,28 @@ function Header() {
         sessionStorage.removeItem("token");
         window.location = "/";
     };
+
+    //START REGION
+    //VyVNK1 FUNCT SEARCH
+
+    const [formData, setFormData] = useState("");
+    const [listSearch, setListSearch] = useState([]);
+    const handleChange = (e) => {
+        setFormData(e.target.value);
+        axios
+            .get(
+                `https://localhost:7113/api/Films?search=${formData}&page=0&limit=10`
+            )
+            .then((response) => {
+                setListSearch(response.data.data.listItem);
+            });
+    };
+    const handleSearch = () => {
+        //console.log(listSearch);
+    };
+
+    //END REGION SEARCH
+
     return (
         <Affix offsetTop={0} onChange={(affixed) => console.log(affixed)}>
             <header className="p-3 text-white">
@@ -51,15 +74,26 @@ function Header() {
 
                         <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 row">
                             <input
+                                onChange={(e) => handleChange(e)}
                                 type="search"
                                 className="form-control form-control-dark col"
                                 placeholder="Search..."
                                 aria-label="Search"
                                 style={{ height: "40px" }}
                             ></input>
-                            <button type="button" class="btn btn-primary col-3">
-                                <FaSearch />
-                            </button>
+                            <Link
+                                to="/filmsearch"
+                                state={{ search: listSearch }}
+                                className="col-3"
+                            >
+                                <button
+                                    type="button"
+                                    class="btn btn-primary "
+                                    onClick={handleSearch}
+                                >
+                                    <FaSearch />
+                                </button>
+                            </Link>
                         </form>
                         {user ? (
                             <>
