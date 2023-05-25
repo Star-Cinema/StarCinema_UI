@@ -27,6 +27,8 @@ dayjs.extend(customParseFormat);
 
 const { Paragraph, Text } = Typography;
 
+//START REGION
+//VYVNK1 COMPONENT FILM INFO
 const FilmInfo = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -112,6 +114,7 @@ const FilmInfo = () => {
     setDisplayTime(true);
   };
 
+  //UI OF FILM INFO
   return (
     <>
       {isBusy ? (

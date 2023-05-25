@@ -9,6 +9,8 @@ import {
 import { useLocation } from "react-router-dom";
 import Advertise from "../home/Advertise";
 
+//VYVNK1 COMPONENT NEWSINFO -  DISPLAY DETAIL OF NEWS
+
 const NewsInfo = () => {
   const location = useLocation();
 
