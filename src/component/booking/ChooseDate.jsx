@@ -5,7 +5,10 @@ function getDatesFromData(data) {
     const newDates = [];
     data.data.listItem.map((date) => {
         let d = date.startTime;
-        newDates.push(d);
+        if((new Date(d)).getTime() > new Date().getTime()){
+            newDates.push(d);
+        }
+        
     });
     // newDates.sort((a, b) =>  - b);
     const uniqueList = [];
