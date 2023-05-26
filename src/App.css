@@ -271,7 +271,7 @@ footer.text-center.text-lg-start.text-white {
 }
 
 .nav-films img {
-  width: 6rem;
+  width: 2rem;
 }
 
 .choose-service {
@@ -446,4 +446,17 @@ footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
   margin-top: 2rem;
   border-top: 1px solid black;
   border-radius: 7px;
+}
+
+.text-end {
+  text-align: right!important;
+  display: inherit;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+.showtimes-row {
+  display: flex;
+}
+.title-movie {
+  margin-left: 1rem;
 }

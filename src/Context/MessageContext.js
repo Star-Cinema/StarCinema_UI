@@ -6,7 +6,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { firestore } from '../firebase/config';
-import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 
 export const MessageContext = React.createContext();
@@ -14,37 +13,47 @@ export const MessageContext = React.createContext();
 export default function MessageProvider({ children }) {
   const [listMessage, setListMessage] = useState([]);
   const [currentUser, setCurrentUser] = useState();
-  useEffect( async ()=> {
-    var infoUser = await axios.get("https://localhost:7113/api/my", { headers: { "Authorization": `Bearer ${sessionStorage.getItem('token')}` } });
-    setCurrentUser(infoUser?.data?.data);
-  }, [])
+
+  useEffect(() => {
+    const unsubscribe = async () => {
+      var token = sessionStorage.getItem('token');
+      if(token) {
+        var res = await axios.get("https://localhost:7113/api/my", { headers: { "Authorization": `Bearer ${sessionStorage.getItem('token')}` } })
+        setCurrentUser(res?.data?.data);
+      }
+    };
+    return () => unsubscribe();
+  },[])
+
 
 
   useEffect(() => {
-    const senderId = '2';
-    const receiverId = 'admin';
-    const userAdminRef = firestore.collection('messages').where('senderId', 'in', [senderId, receiverId])
-    .where('receiverId', 'in', [senderId, receiverId]).orderBy('createAt','asc');
-
-    // Listen to change in the message list AnhNT282
-    const unsubscribe = userAdminRef.onSnapshot((querySnapshot) => {
-      const data = [];
-      querySnapshot.forEach((doc) => {
-        const messageData = doc.data();
-        data.push(messageData);
+    if(currentUser) {
+      const senderId = currentUser.id;
+      const receiverId = 'admin';
+      const userAdminRef = firestore.collection('messages').where('senderId', 'in', [senderId, receiverId])
+      .where('receiverId', 'in', [senderId, receiverId]).orderBy('createAt','asc');
+  
+      // Listen to change in the message list AnhNT282
+      const unsubscribe = userAdminRef.onSnapshot((querySnapshot) => {
+        const data = [];
+        querySnapshot.forEach((doc) => {
+          const messageData = doc.data();
+          data.push(messageData);
+        });
+        setListMessage(data);
       });
-      setListMessage(data);
-    });
-
-    // Cancel listening when component unmount AnhNT282
-    return () => unsubscribe();
-  }, []);
+  
+      // Cancel listening when component unmount AnhNT282
+      return () => unsubscribe();
+    }
+  }, [currentUser]);
 
 
   return (
     <MessageContext.Provider
       value={{
-        listMessage
+        listMessage, currentUser
       }}
     >
       {children}
