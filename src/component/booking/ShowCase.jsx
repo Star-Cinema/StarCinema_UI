@@ -2,13 +2,13 @@ function ShowCase() {
     return (
         <ul className="ShowCase">
             <li>
-                <span className="seat" /> <small>N/A</small>
+                <span className="seat" /> <small>Trống</small>
             </li>
             <li>
-                <span className="seat selected" /> <small>Selected</small>
+                <span className="seat selected" /> <small>Đã chọn</small>
             </li>
             <li>
-                <span className="seat occupied" /> <small>Occupied</small>
+                <span className="seat occupied" /> <small>Đã có người chọn</small>
             </li>
         </ul>
     );

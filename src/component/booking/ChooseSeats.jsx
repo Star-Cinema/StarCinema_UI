@@ -76,7 +76,7 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                 " "
             ) : (
                 <div>
-                    <h4>Choose Seat(s)</h4>
+                    <h4>Chọn ghế</h4>
                     <div className="choose-seat">
                         {rows.map((row, index) => {
                             return (

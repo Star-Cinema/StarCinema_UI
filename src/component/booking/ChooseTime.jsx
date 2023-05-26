@@ -51,7 +51,7 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
     }, [listTimes]);
     return (
         <div>
-            <h4>Choose Time</h4>
+            <h4>Chọn khung giờ</h4>
             <ul className="choose-dates items-list-nav">
                 {listTimes.dates.map((time, index) => (
                     <li
