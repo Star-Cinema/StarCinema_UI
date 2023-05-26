@@ -46,7 +46,7 @@ function ChooseServices({ services, handleServicesId }) {
                                 label={service.name}
                                 key={index}
                             >
-                                <Space>{service.name}</Space>
+                                <Space>{service.name + " " + service.price} </Space>
                             </Option>
                         );
                     })}
