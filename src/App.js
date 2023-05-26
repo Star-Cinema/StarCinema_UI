@@ -17,7 +17,9 @@ import FilmSearch from './pages/FilmSearch';
 function Layout() {
   return (
     <div>
-      <Chat />
+      <MessageProvider>
+        <Chat />
+      </MessageProvider>
       <Outlet />
     </div>
   );

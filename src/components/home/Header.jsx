@@ -77,7 +77,7 @@ function Header() {
                                 onChange={(e) => handleChange(e)}
                                 type="search"
                                 className="form-control form-control-dark col"
-                                placeholder="Search..."
+                                placeholder="Tìm kiếm phim..."
                                 aria-label="Search"
                                 style={{ height: "40px" }}
                             ></input>

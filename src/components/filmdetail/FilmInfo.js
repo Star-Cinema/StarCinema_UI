@@ -126,10 +126,10 @@ const FilmInfo = () => {
               style={{ margin: "1.5em" }}
               items={[
                 {
-                  title: <a href="/">Home</a>,
+                  title: <a href="/">Trang chủ</a>,
                 },
                 {
-                  title: "Film Detail",
+                  title: "Phim ..",
                 },
               ]}
             />
@@ -152,15 +152,15 @@ const FilmInfo = () => {
                       <Rate disabled defaultValue={5} />
                       <p>
                         <ClockCircleOutlined style={{}} /> {data[0].duration}{" "}
-                        minutes
+                        phút
                       </p>
                       <Tag color="#2db7f5">{data[0].category.name}</Tag>
-                      <p>Country: {data[0].country}</p>
-                      <p>Director: {data[0].director}</p>
-                      <p>Producer: {data[0].producer}</p>
-                      <p>Release date: {data[0].release.slice(0, 10)}</p>
-                      <p>Date Start Showing: {dateStartShowing} </p>
-                      <p>Date End Showing: {dateEndShowing} </p>
+                      <p>Quốc gia: {data[0].country}</p>
+                      <p>Đạo diễn: {data[0].director}</p>
+                      <p>Nhà sản xuất: {data[0].producer}</p>
+                      <p>Ngày ra rạp: {data[0].release.slice(0, 10)}</p>
+                      <p>Ngày khởi chiếu: {dateStartShowing} </p>
+                      {/* <p>Ngày: {dateEndShowing} </p> */}
                     </div>
                   </Col>
                 </Row>
@@ -168,7 +168,7 @@ const FilmInfo = () => {
                   <Col span={24} type="flex" align="left">
                     <div>
                       <Divider orientation="left">
-                        <h2>DESCRIPTION</h2>
+                        <h2>Mô tả phim</h2>
                       </Divider>
                       <Card>
                         <Paragraph
@@ -206,7 +206,7 @@ const FilmInfo = () => {
                   <Col span={24} type="flex" align="left">
                     <div>
                       <Divider orientation="left">
-                        <h2>SCHEDULE</h2>{" "}
+                        <h2>Lịch chiếu</h2>{" "}
                         <DatePicker
                           disabledDate={disabledDate}
                           onChange={onSelectDate}
@@ -219,7 +219,7 @@ const FilmInfo = () => {
                   <Row style={{ margin: "1.5em" }}>
                     <Col span={24} type="flex" align="left">
                       <div>
-                        <Card title="TIME">
+                        <Card title="Thời gian">
                           {listTime.map((item) => (
                             <Tag color="orange">
                               {item.startTime.slice(11, 16)}
@@ -252,7 +252,7 @@ const FilmInfo = () => {
 
             {/* MODAL TO DISPLAY YOUTUBE */}
             <Modal
-              title="Movie title trailer"
+              title="Trailer phim"
               centered
               open={open}
               //onOk={() => setOpen(false)}
