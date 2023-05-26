@@ -271,7 +271,7 @@ footer.text-center.text-lg-start.text-white {
 }
 
 .nav-films img {
-  width: 6rem;
+  width: 2rem;
 }
 
 .choose-service {
@@ -461,4 +461,12 @@ footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
 .ant-card-cover img{
   border-radius: 3px 3px 0px 0px!important;
   padding: 1px;
+  /* padding-bottom: 1rem;
+  padding-top: 1rem; */
+}
+.showtimes-row {
+  display: flex;
+}
+.title-movie {
+  margin-left: 1rem;
 }
