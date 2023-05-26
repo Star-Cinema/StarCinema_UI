@@ -15,7 +15,7 @@ function ChooseServices({ services, handleServicesId }) {
     return (
         <div className="choose-service">
             <h4 fo="inputService" className="form-label">
-                Choose Services
+                Chọn dịch vụ
             </h4>
             {/* <Form.Select
                 aria-label="Default select example"
@@ -33,7 +33,7 @@ function ChooseServices({ services, handleServicesId }) {
                 <Select
                     mode="multiple"
                     style={{ width: "100%" }}
-                    placeholder="select one country"
+                    placeholder="Chọn dịch vụ"
                     defaultValue={[]}
                     // onChange={handleChange}
                     onChange={handleChange}

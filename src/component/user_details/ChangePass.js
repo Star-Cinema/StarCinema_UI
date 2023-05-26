@@ -38,6 +38,12 @@ function ChangePass() {
     const handleFinish = async () => {
         var data = form.getFieldValue()
 
+        if (data.currentPass == data.newPass) 
+        {
+            alert("Mật khẩu mới phải khác mật khẩu hiện tại")
+            return
+        }
+
         var pass = {
             currentPass: data.currentPass,
             newPass: data.newPass,
@@ -45,17 +51,25 @@ function ChangePass() {
         }
 
 
-        var res = await axios.put("https://localhost:7113/api/my/changepass",
-            pass,
-            {
-                headers: {
-                    "Authorization": `Bearer ${sessionStorage.getItem('token')}`,
-                    "Content-Type": "application/json"
+        if (data.newPass == data.reNewPass) {
+            try {
+                var res = await axios.put("https://localhost:7113/api/my/changepass",
+                    pass,
+                    {
+                        headers: {
+                            "Authorization": `Bearer ${sessionStorage.getItem('token')}`,
+                            "Content-Type": "application/json"
+                        }
+                    })
+                if (res?.data?.code == 200) {
+                    window.location.reload()
                 }
-            })
-        if (res?.data?.code == 200) {
-            window.location.reload()
+
+            } catch (err) {
+                alert("Mật khẩu bạn nhập không đúng với mật khẩu hiện tại")
+            }
         }
+        else alert("Mật khẩu nhập lại phải giống mật khẩu mới")
 
 
         // else console.log(res?.response?.data?.message)

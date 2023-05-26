@@ -62,8 +62,8 @@ export default function BookablesPage() {
     return (
         <div>
             <Header />
-            <div className="container booking-page">
-                <h1>BOOKING</h1>
+            <div className="container booking-page" style={{marginBottom:"30px"}}>
+                <h1>ĐẶT VÉ</h1>
                 <div className="main-booking row">
                     <div className="nav-films col col-xxl-4">
                         <NavFilms
@@ -81,7 +81,7 @@ export default function BookablesPage() {
                         ) : (
                             <div className="bottom row">
                                 <div className="movie-booking row">
-                                    <h4>Choose Date</h4>
+                                    <h4>Chọn ngày chiếu</h4>
                                     <ChooseDate
                                         film={filmSelected}
                                         setData={handleChange}
