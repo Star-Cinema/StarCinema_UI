@@ -14,7 +14,7 @@ const FilmTab = () => {
   const items = [
     {
       key: "1",
-      label: `NOW SHOWING`,
+      label: `PHIM ĐANG CHIẾU`,
       children: (
         <>
           <FilmList isNowFilm={isNowFilm} />{" "}
@@ -23,7 +23,7 @@ const FilmTab = () => {
     },
     {
       key: "2",
-      label: `UPCOMING`,
+      label: `PHIM SẮP CHIẾU`,
       children: (
         <>
           <FilmList isNowFilm={isNowFilm} />{" "}

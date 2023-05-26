@@ -77,7 +77,7 @@ function Header() {
                                 onChange={(e) => handleChange(e)}
                                 type="search"
                                 className="form-control form-control-dark col"
-                                placeholder="Search..."
+                                placeholder="Tìm kiếm phim..."
                                 aria-label="Search"
                                 style={{ height: "40px" }}
                             ></input>
@@ -124,15 +124,6 @@ function Header() {
                                             }}
                                         />
                                         <span style={{ color: "#000", fontSize: "23px" ,marginRight:"40px"}}>{user?.name}</span>
-
-//                                         <span
-//                                             style={{
-//                                                 color: "#000",
-//                                                 fontSize: "23px",
-//                                             }}
-//                                         >
-//                                             {user?.name}
-//                                         </span>
                                     </button>
                                     <ul className="dropdown-menu">
                                         <li>

@@ -451,6 +451,14 @@ footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
 .text-end {
   text-align: right!important;
   display: inherit;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+}
+
+.mb-24{
+  margin-bottom: 24px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.ant-card-cover img{
+  border-radius: 3px 3px 0px 0px!important;
+  padding: 1px;
 }

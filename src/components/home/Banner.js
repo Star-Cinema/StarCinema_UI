@@ -15,52 +15,52 @@ const Banner = () => (
   <>
     <Carousel autoplay style={{ backgroundColor: "grey" }}>
       <div style={{ position: "relative" }}>
-        <div style={carouselStyle}>
+        {/* <div style={carouselStyle}>
           <h1 style={{ color: "white" }}>STAR CINEMA</h1>
-          <h2 style={{ color: "white" }}>TOP CINEMA QUALIFIED</h2>
+          <h2 style={{ color: "white" }}>Trang web hàng đầu cho đặt vé xem phim</h2>
           <h3 style={{ color: "white" }}>
-            We provide the high quality film with affordable price
+            Chất lượng dịch vụ là tài sản lớn nhất của chúng tôi
           </h3>
-        </div>
+        </div> */}
         <Image
           width={"100%"}
           preview={false}
           height={500}
-          src="https://img1.wallspic.com/crops/6/9/6/4/6/164696/164696-star_wars-bb_8-darth_vader-poe_dameron-poster-1920x1080.jpg"
+          src="https://cdn.galaxycine.vn/media/2023/5/23/2048wx682h_1684824878382.jpg"
         />
       </div>
-      <div style={{ position: "relative" }}>
-        
+      {/* <div style={{ position: "relative" }}>
+
         <Image
           width={"100%"}
           preview={false}
           height={500}
           src="./image/banner2.jpg"
         />
-      </div>
+      </div> */}
       <div style={{ position: "relative" }}>
-        <div style={carouselStyle}>
+        {/* <div style={carouselStyle}>
           <h1 style={{ color: "white" }}>STAR CINEMA</h1>
           <h2 style={{ color: "white" }}>TOP CINEMA QUALIFIED</h2>
           <h3 style={{ color: "white" }}>
             We provide the high quality film with affordable price
           </h3>
-        </div>
+        </div> */}
 
         <Image
           width={"100%"}
           preview={false}
           height={500}
-          src="https://shorturl.at/hP348" 
+          src="https://cdn.galaxycine.vn/media/2023/5/23/2048x682_1684823880733.jpg"
         />
       </div>
       <div style={{ position: "relative" }}>
-        
+
         <Image
           width={"100%"}
           preview={false}
           height={500}
-          src="./image/banner3.jpg"
+          src="https://cdn.galaxycine.vn/media/2023/5/12/2048wx682h_1683861238716.jpg"
         />
       </div>
     </Carousel>

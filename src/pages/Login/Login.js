@@ -17,11 +17,19 @@ function Login() {
     const validate = () => {
         const error = {}
         if (username == '') error.username = 'Email không được để trống!'
+        if(!isValidEmail(username))  error.username = 'Email sai định dạng!'
         if (password == '') error.password = 'Mật khẩu không được để trống!'
 
         setErrors(error)
         return Object.keys(error).length === 0;
     }
+
+    function isValidEmail(email) {
+        console.log(email)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
 
     //Request API to login HungTD34
     const handleLogin = async () => {
@@ -31,20 +39,19 @@ function Login() {
         }
 
         if (validate()) {
-            var rs = await axios.post("https://localhost:7113/api/auth/login", user)
-            console.log(rs?.data)
-            if (rs?.data?.code == 200) {
-                const user = jwtDecode(rs.data.data)
-                console.log(user)
-                //Check that the logged in account is of User
-                if(user.role == "user")
-                {
-                    sessionStorage.setItem('token', rs.data.data)
-                    window.location = '/'
-                }
-                else alert("This website for user")
-            }
-            else alert(rs?.data?.message)
+            // var rs = await axios.post("https://localhost:7113/api/auth/login", user)
+            // console.log(rs?.data)
+            // if (rs?.data?.code == 200) {
+            //     const user = jwtDecode(rs.data.data)
+            //     console.log(user)
+            //     //Check that the logged in account is of User
+            //     if (user.role == "user") {
+            //         sessionStorage.setItem('token', rs.data.data)
+            //         window.location = '/'
+            //     }
+            //     else alert("This website for user")
+            // }
+            // else alert(rs?.data?.message)
         }
     }
 
@@ -70,12 +77,12 @@ function Login() {
                 }
             </div>
             <div className='login-group'>
-                <div className='remember'>
+                {/* <div className='remember'>
                     <input className="form-check-input" type="checkbox" id="flexCheckDefault" />
                     <label className="form-check-label" htmlFor="flexCheckDefault">
                         Remember me?
                     </label>
-                </div>
+                </div> */}
                 <Link to='/forgot-password'>
                     <div className='forgot-password'>
                         Quên mật khẩu?
