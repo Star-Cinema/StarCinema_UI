@@ -51,7 +51,7 @@ function Profile() {
                         <Tab eventKey="transaction" title="Lịch sử giao dịch">
                             <Transactions />
                         </Tab>
-                        <Tab eventKey="change-pass" title="Đổi mật khẩu">
+                        <Tab eventKey="change-pass" title="Đổi mật khẩu"  style={{minHeight:"50vh"}}>
                             <ChangePass />
                         </Tab>
                     </Tabs>

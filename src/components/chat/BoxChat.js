@@ -16,7 +16,7 @@ import avatarAdmin from '../../assets/icon/admin.png'
 
 
 function BoxChat(props) {
-    const { listMessage } = useContext(MessageContext);
+    const { listMessage, currentUser } = useContext(MessageContext);
     const [showBoxChat, setShowBoxChat] = useState(false);
     const [inputMessage, setInputMessage] = useState("");
     const messageListRef = useRef(null);
@@ -26,7 +26,7 @@ function BoxChat(props) {
         if (messageListRef.current) {
             messageListRef.current?.lastElementChild?.scrollIntoView();
         }
-      }, [listMessage, showBoxChat]);
+    }, [listMessage, showBoxChat]);
 
 
     const handleSendMessage = () => {
@@ -35,8 +35,8 @@ function BoxChat(props) {
         const userAdminRef = firestore.collection('messages');
 
         const chatData = {
-            senderId: 'admin',
-            receiverId: '2',
+            senderId: currentUser.id,
+            receiverId: 'admin',
             content: inputMessage,
             createAt: firebase.firestore.FieldValue.serverTimestamp(),
         };
@@ -54,7 +54,7 @@ function BoxChat(props) {
 
     return (
         <>
-            {
+            {currentUser && (
                 showBoxChat ? (
                     <ChatBoxStyles>
                         <div className='box-chat'>
@@ -106,7 +106,7 @@ function BoxChat(props) {
                     <ButtonChatStyle>
                         <img onClick={() => setShowBoxChat(true)} style={{ height: 60, width: 60, borderRadius: 50 }} src="https://cdn.chatbot.com/widget/61f28451fdd7c5000728b4f9/DSjjJVtWgP_jxGWP.png" className="icon-chat" />
                     </ButtonChatStyle>
-            }
+            )}
         </>
 
     );
