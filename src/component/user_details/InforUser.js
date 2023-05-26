@@ -47,7 +47,7 @@ function InforUser() {
             Dob: data.dob.toISOString()
         }
 
-        console.log(user)
+        // console.log(user)
 
         var res = await axios.put("https://localhost:7113/api/my/update",
             user,

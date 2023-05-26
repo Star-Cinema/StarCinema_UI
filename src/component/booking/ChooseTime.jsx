@@ -50,13 +50,13 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
         setTimeIndex(null);
     }, [listTimes]);
     return (
-        <div>
+        <div className="">
             <h4>Choose Time</h4>
-            <ul className="choose-dates items-list-nav">
+            <ul className="choose-dates items-list-nav row">
                 {listTimes.dates.map((time, index) => (
                     <li
                         key={index}
-                        className={time.id === timeIndex ? "selected" : null}
+                        className={time.id === timeIndex ? "selected col"  : "col"}
                     >
                         <button
                             className="btn"
@@ -67,7 +67,7 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
                         >
                             {new Date(time.date).getHours() +
                                 ":" +
-                                new Date(time.date).getMinutes()}
+                                (new Date(time.date).getMinutes() === 0 ? "00" : new Date(time.date).getMinutes())}
                         </button>
                     </li>
                 ))}

@@ -2,10 +2,11 @@ import { useState } from "react";
 function SeatLoad({ seat, handleSeatsId }) {
     
     const [status, setStatus] = useState(seat.status);
+    console.log(status);
     // const [TabIndex, setTabIndex] = useState(0);
     let seatClass = "btn btn-info seat-available";
     let isButtonDisabled = false;
-    if (status === "Unvailable") {
+    if (status === "Unavailable") {
         seatClass = "btn btn-info seat-unavailable";
         isButtonDisabled = true;
     }
@@ -19,11 +20,11 @@ function SeatLoad({ seat, handleSeatsId }) {
             className={seatClass}
             disabled={isButtonDisabled}
             onClick={() => {
-                if(status === "available"){
+                if(status === "Available"){
                     setStatus("choosen");
                     handleSeatsId(1, seat.id);
                 }else{
-                    setStatus("available");
+                    setStatus("Available");
                     handleSeatsId(2, seat.id);
                 }
             }}

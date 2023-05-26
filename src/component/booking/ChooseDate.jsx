@@ -5,10 +5,8 @@ function getDatesFromData(data) {
     const newDates = [];
     data.data.listItem.map((date) => {
         let d = date.startTime;
-        if((new Date(d)).getTime() > new Date().getTime()){
-            newDates.push(d);
-        }
-        
+        newDates.push(d);
+        console.log("date: " + d);
     });
     // newDates.sort((a, b) =>  - b);
     const uniqueList = [];
@@ -24,6 +22,7 @@ function getDatesFromData(data) {
             uniqueList.push(currentDate);
         }
     });
+    uniqueList.sort((a, b) => new Date(a) - new Date(b));
     const finalListDates = [];
     uniqueList.map((dateUnique, index) => {
         const listDatesOfUnique = [];
@@ -39,17 +38,22 @@ function getDatesFromData(data) {
             if (year1 === year2 && month1 === month2 && day1 === day2) {
                 data.data.listItem.map((date) => {
                     let d = date.startTime;
-                    if(d === dateNormal){
-                        listDatesOfUnique.push({id: date.id, date: dateNormal});
+                    if (d === dateNormal) {
+                        listDatesOfUnique.push({
+                            id: date.id,
+                            date: dateNormal,
+                        });
                     }
                 });
             }
-            // 
+            //
         });
-        
+
         finalListDates.push({
             id: index,
-            dates: listDatesOfUnique,
+            dates: listDatesOfUnique.sort(
+                (a, b) => new Date(a.date) - new Date(b.date)
+            ),
         });
     });
     return finalListDates;
@@ -61,7 +65,7 @@ function ChooseDate({ setData, film, postData }) {
     const [price, setPrice] = useState(0);
     const [dateSelected, setDateSelected] = useState(null);
     useEffect(() => {
-        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}`)
+        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}&limit=1000`)
             .then((resp) => resp.json())
             .then((data) => {
                 setPrice(data.data?.listItem[0]?.ticket?.price);
@@ -73,24 +77,39 @@ function ChooseDate({ setData, film, postData }) {
     return (
         <div>
             <div className="choose-dates ">
-                <ul className="items-list-nav">
+                <ul className="items-list-nav row">
                     {datess === null
                         ? " "
                         : datess.map((date, index) => (
                               <li
                                   key={index}
                                   className={
-                                      dateSelected === null ? null : date.id === dateSelected.id ? "selected" : null
+                                      dateSelected === null
+                                          ? null
+                                          : date.id === dateSelected.id
+                                          ? "selected"
+                                          : null
                                   }
                               >
                                   <button
                                       className="btn"
                                       onClick={() => {
-                                        //   setDateIndex(index);
+                                          //   setDateIndex(index);
                                           setDateSelected(date);
                                       }}
                                   >
-                                      {days[new Date(date.dates[0].date).getDay()] + " " + (new Date(date.dates[0].date).getDate()) + "/" + (new Date(date.dates[0].date).getMonth())}
+                                      {days[
+                                          new Date(date.dates[0].date).getDay()
+                                      ] +
+                                          " " +
+                                          new Date(
+                                              date.dates[0].date
+                                          ).getDate() +
+                                          "/" +
+                                          (new Date(
+                                              date.dates[0].date
+                                          ).getMonth() +
+                                              1)}
                                   </button>
                               </li>
                           ))}
@@ -104,9 +123,9 @@ function ChooseDate({ setData, film, postData }) {
                     <ChooseTime
                         listTimes={dateSelected}
                         setData={setData}
-                        idFilm = {film.id}
-                        price = {price}
-                        postData = {postData}
+                        idFilm={film.id}
+                        price={price}
+                        postData={postData}
                     />
                 )}
             </div>
