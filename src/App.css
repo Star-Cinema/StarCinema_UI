@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Arvo";
+  src: local("Arvo"),
+   url("./assets/fonts/Arvo/Arvo-Bold.ttf") format("truetype");
+  font-weight: bold;
+ }
 :root {
   box-sizing: border-box;
 }
@@ -469,4 +475,19 @@ footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
 }
 .title-movie {
   margin-left: 1rem;
+}
+
+*{
+  font-family: 'Arvo' !important;
+}
+
+.choose-dates li.col {
+  padding-left: 1rem;
+}
+
+footer.ant-layout-footer.css-dev-only-do-not-override-w8mnev {
+  bottom: 0;
+  /* position: fixed; */
+  width: 100%;
+  background-color: rgba(225, 238, 246, 0.7);
 }

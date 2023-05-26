@@ -32,7 +32,6 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                 servicesSelected.includes(item.id)
             );
             setListServicesS(selectedData);
-            console.log("data: " + selectedData);
         }
     }, [servicesSelected]);
     const handleServicesId = (value) => {

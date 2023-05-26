@@ -18,7 +18,7 @@ function Verify() {
 
     const fecthData = async () => {
         var res = await axios.post("https://localhost:7113/api/auth/verify?email=" + email + "&token=" + token)
-        console.log(res?.data?.code)
+        // console.log(res?.data?.code)
         if (res?.data?.code == 200) setVerify(true)
     }
     return (
