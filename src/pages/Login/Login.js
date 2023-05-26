@@ -39,19 +39,19 @@ function Login() {
         }
 
         if (validate()) {
-            // var rs = await axios.post("https://localhost:7113/api/auth/login", user)
-            // console.log(rs?.data)
-            // if (rs?.data?.code == 200) {
-            //     const user = jwtDecode(rs.data.data)
-            //     console.log(user)
-            //     //Check that the logged in account is of User
-            //     if (user.role == "user") {
-            //         sessionStorage.setItem('token', rs.data.data)
-            //         window.location = '/'
-            //     }
-            //     else alert("This website for user")
-            // }
-            // else alert(rs?.data?.message)
+            var rs = await axios.post("https://localhost:7113/api/auth/login", user)
+            console.log(rs?.data)
+            if (rs?.data?.code == 200) {
+                const user = jwtDecode(rs.data.data)
+                console.log(user)
+                //Check that the logged in account is of User
+                if (user.role == "user") {
+                    sessionStorage.setItem('token', rs.data.data)
+                    window.location = '/'
+                }
+                else alert("This website for user")
+            }
+            else alert(rs?.data?.message)
         }
     }
 

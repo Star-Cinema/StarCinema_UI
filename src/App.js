@@ -27,8 +27,8 @@ function Layout() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <MessageProvider>
+    <MessageProvider>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
 
@@ -49,8 +49,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
-      </MessageProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </MessageProvider>
   );
 }
 
