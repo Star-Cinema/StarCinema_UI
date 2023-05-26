@@ -35,8 +35,8 @@ function BoxChat(props) {
         const userAdminRef = firestore.collection('messages');
 
         const chatData = {
-            senderId: 'admin',
-            receiverId: '2',
+            senderId: '2',
+            receiverId: 'admin',
             content: inputMessage,
             createAt: firebase.firestore.FieldValue.serverTimestamp(),
         };

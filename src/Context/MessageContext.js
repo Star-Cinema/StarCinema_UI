@@ -6,11 +6,19 @@
 
 import React, { useEffect, useState } from 'react';
 import { firestore } from '../firebase/config';
+import jwtDecode from 'jwt-decode';
+import axios from 'axios';
 
 export const MessageContext = React.createContext();
 
 export default function MessageProvider({ children }) {
   const [listMessage, setListMessage] = useState([]);
+  const [currentUser, setCurrentUser] = useState();
+  useEffect( async ()=> {
+    var infoUser = await axios.get("https://localhost:7113/api/my", { headers: { "Authorization": `Bearer ${sessionStorage.getItem('token')}` } });
+    setCurrentUser(infoUser?.data?.data);
+  }, [])
+
 
   useEffect(() => {
     const senderId = '2';
