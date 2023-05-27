@@ -34,6 +34,8 @@ const FilmList = ({ isNowFilm }) => {
           setBusy(false);
 
           setNowFilmAPI(response.data);
+        }).catch(function (error) {
+          console.log(error);
         });
     }
     fetchData();
@@ -48,6 +50,8 @@ const FilmList = ({ isNowFilm }) => {
         .then((response) => {
           setBusy(false);
           setNowFilmAPI(response.data);
+        }).catch(function (error) {
+          console.log(error);
         });
     }
 
@@ -83,7 +87,7 @@ const FilmList = ({ isNowFilm }) => {
               pageSize: 6,
             }}
             itemLayout="vertical"
-            grid={{ gutter: 16, lg: 3, xs:1 }}
+            grid={{ gutter: 16, lg: 3, xs: 1 }}
             dataSource={data}
             renderItem={(p) => (
               <List.Item>

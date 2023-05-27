@@ -456,13 +456,9 @@ footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
 .mb-24{
   margin-bottom: 24px;
   border-radius: 3px;
-  border: 1px solid;
 }
 .ant-card-cover img{
   border-radius: 3px 3px 0px 0px!important;
-  padding: 1px;
-  /* padding-bottom: 1rem;
-  padding-top: 1rem; */
 }
 .showtimes-row {
   display: flex;

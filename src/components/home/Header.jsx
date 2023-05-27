@@ -5,10 +5,12 @@ import { useState } from "react";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
 import { Affix } from "antd";
+import styled from 'styled-components'
+import '../../assets/js/header.js';
 function Header() {
     const [user, setUser] = useState(
         sessionStorage.getItem("token") &&
-            jwtDecode(sessionStorage.getItem("token"))
+        jwtDecode(sessionStorage.getItem("token"))
     );
     console.log(user);
 
@@ -42,7 +44,7 @@ function Header() {
         <Affix offsetTop={0} onChange={(affixed) => console.log(affixed)}>
             <header className="p-3 text-white">
                 <div className="header-top">
-                    <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start mb-sm-2 mb-lg-0">
                         <a
                             href="/"
                             className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
@@ -59,10 +61,12 @@ function Header() {
 
                         <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                             <li>
-                                <Link to="/booking" className="btn-header">
-                                    <FaDoorOpen />
-                                    <span>Booking</span>
-                                </Link>
+                                {/* <Link to="/booking">
+                                    <span>Đặt vé</span>
+                                </Link> */}
+                                <LinkHeaderStyle>
+                                    <a href="/booking" className="link-header">Đặt vé</a>
+                                </LinkHeaderStyle>
                             </li>
                             {/* <li>
                             <Link to="/my" className="btn-header">
@@ -72,11 +76,11 @@ function Header() {
                         </li> */}
                         </ul>
 
-                        <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 row">
+                        <form className="col-md-10 col-lg-auto mb-3 mb-lg-0 me-lg-3 row">
                             <input
                                 onChange={(e) => handleChange(e)}
                                 type="search"
-                                className="form-control form-control-dark col"
+                                className="form-control form-control-dark w-75 col"
                                 placeholder="Tìm kiếm phim..."
                                 aria-label="Search"
                                 style={{ height: "40px" }}
@@ -84,11 +88,12 @@ function Header() {
                             <Link
                                 to="/filmsearch"
                                 state={{ search: listSearch }}
-                                className="col-3"
+                                className="col-lg-3 col-md-1"
                             >
                                 <button
                                     type="button"
-                                    class="btn btn-primary "
+                                    className="btn btn-primary d-flex justify-content-center"
+                                    style={{height: 40}}
                                     onClick={handleSearch}
                                 >
                                     <FaSearch />
@@ -123,7 +128,7 @@ function Header() {
                                                 marginRight: "5px",
                                             }}
                                         />
-                                        <span style={{ color: "#000", fontSize: "23px" ,marginRight:"40px"}}>{user?.name}</span>
+                                        <span style={{ color: "#000", fontSize: "23px", marginRight: "40px" }}>{user?.name}</span>
                                     </button>
                                     <ul className="dropdown-menu">
                                         <li>
@@ -167,7 +172,7 @@ function Header() {
                                         marginRight: "10px",
                                     }}
                                 >
-                                    Login
+                                    Đăng nhập
                                 </a>
                                 <a
                                     href="/register"
@@ -181,7 +186,7 @@ function Header() {
                                         marginRight: "40px",
                                     }}
                                 >
-                                    Sign-up
+                                    Đăng ký
                                 </a>
                             </div>
                         )}
@@ -193,3 +198,29 @@ function Header() {
 }
 
 export default Header;
+
+const LinkHeaderStyle = styled.div`
+    .link-header {
+        display: inline-block;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: relative;
+    }
+    .link-header::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3.5px;
+      bottom: -4px;
+      left: 50%;
+      background-color: orange;
+      transition: width 0.3s ease-in-out;
+      transform: translateX(-50%);
+      transform-origin: center;
+    }
+
+    .link-header:hover::after {
+      width: 100%;
+    }
+`;
