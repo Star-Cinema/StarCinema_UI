@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import ChooseDate from "./ChooseDate";
 import NavFilms from "./NavFilms";
 import axios from "axios";
-import Header from '../../components/home/Header'
-import AppFooter from '../../components/home/AppFooter'
+import Header from "../../components/home/Header";
+import AppFooter from "../../components/home/AppFooter";
 export default function BookablesPage() {
     const listFilms = [];
     // const bookablesInGroup = data.bookables.filter((b) => b.group === group);
@@ -37,12 +37,18 @@ export default function BookablesPage() {
         setFormData({ ...dataForm, [name]: value });
     };
     console.log(" data", dataForm);
-
+    var token = sessionStorage.getItem("token");
     const postData = async () => {
         try {
             const response = await axios.post(
                 "https://localhost:7113/api/Bookings/CreateBookingByUser",
-                dataForm
+                dataForm,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
             if (response?.data?.code === 200) {
                 window.location = response.data?.data;
