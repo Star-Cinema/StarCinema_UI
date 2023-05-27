@@ -3,8 +3,7 @@ import "../App.css";
 import { Row, Col, Card, List } from "antd";
 import Advertise from "../components/home/Advertise";
 import { useLocation, Link } from "react-router-dom";
-import Header from "../components/home/Header";
-import AppFooter from "../components/home/AppFooter";
+
 const { Meta } = Card;
 
 // VYVNK1 COMPONENT SEARCH
@@ -15,7 +14,6 @@ const FilmSearch = () => {
 
   return (
     <>
-    <Header></Header>
       <Row style={{ margin: "1.5em" }}>
         <Col lg={18} xs={24}>
           {result.length == 0 ? (
@@ -58,7 +56,6 @@ const FilmSearch = () => {
           <Advertise />
         </Col>
       </Row>
-      <AppFooter></AppFooter>
     </>
   );
 };
