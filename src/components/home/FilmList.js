@@ -84,10 +84,10 @@ const FilmList = ({ isNowFilm }) => {
         <>
           <List
             pagination={{
-              pageSize: 6,
+              pageSize: 8,
             }}
             itemLayout="vertical"
-            grid={{ gutter: 16, lg: 3, xs: 1 }}
+            grid={{ gutter: 16, lg: 4, xs: 1 }}
             dataSource={data}
             renderItem={(p) => (
               <List.Item>
