@@ -17,27 +17,27 @@ function Profile() {
     if(!sessionStorage.getItem("token")){
         return (
             <div className="main-profile">
-                <div className="header">
+                {/* <div className="header">
                     <Header />
-                </div>
+                </div> */}
                 <div className="container">
                     <div className="main not-login">
                         <span>Bạn chưa đăng nhập</span>
                         <a className="btn" href="/login">Đăng nhập ngay</a>
                     </div>
                 </div>
-                <div className="footer">
+                {/* <div className="footer">
                     <AppFooter />
-                </div>
+                </div> */}
             </div>
         );
     }
     else
     return (
         <div className="main-profile">
-            <div className="header">
+            {/* <div className="header">
                 <Header />
-            </div>
+            </div> */}
             <div className="container">
                 <div className="main">
                     <Tabs
@@ -74,9 +74,9 @@ function Profile() {
                 </div> */}
                 </div>
             </div>
-            <div className="footer">
+            {/* <div className="footer">
                 <AppFooter />
-            </div>
+            </div> */}
         </div>
     );
 }

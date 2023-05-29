@@ -1,5 +1,6 @@
 import { Row, Tabs, Col, Card, Button, Divider } from "antd";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const { Meta } = Card;
 
@@ -42,7 +43,7 @@ const News = () => {
                   cover={<img alt="example" src={i.src} />}
                   actions={[
                     <Link to={"/newsdetail"} state={{ title: i.title, src: i.src }}>
-                      <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
+                      <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
                         Xem thêm
                       </Button>
                     </Link>
@@ -62,7 +63,7 @@ const News = () => {
               to={"/newsdetail"}
               state={{ title: newsData[2].title, src: newsData[2].src }}
             >
-              <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
+              <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
                 Xem thêm
               </Button>
             </Link>,
@@ -77,7 +78,7 @@ const News = () => {
             cover={<img alt="example" src={i.src} />}
             actions={[
               <Link to={"/newsdetail"} state={{ title: i.title, src: i.src }}>
-                <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
+                <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
                   Xem thêm
                 </Button>
               </Link>,
@@ -88,104 +89,129 @@ const News = () => {
         ))}
       </Col>
       </Row> */}
-      <Row gutter={[24, 0]}>
-        <Divider>
-          <h2 style={{ color: "#ad6800" }}>GÓC TIN TỨC</h2>
-        </Divider>
-        <Col xs={24} md={24}>
-          <Row gutter={[24, 0]}>
-            <Col xs={24} xl={6}>
-              <Card
-                className="mb-24"
-                cover={<img alt="example" src={newsData[0].src} />}
-                actions={[
-                  <Link
-                    to={"/newsdetail"}
-                    state={{ title: newsData[0].title, src: newsData[0].src }}
+      <NewsStyle>
+        <Row gutter={[24, 0]} style={{
+          backgroundImage: 'url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/bg_latestnew.png)',
+          backgroundPosition: 'top center',
+          backgroundRepeat: 'no-repeat'
+        }}>
+          <Divider>
+            <h2 style={{
+              color: '#FE7900',
+              fontFamily: '"Roboto Condensed", Sans-serif',
+              fontWeight: 600,
+              margin: '40px'
+            }}>TIN TỨC</h2>
+          </Divider>
+          <div style={{ width: '80%', margin: 'auto' }}>
+            <Col xs={24} md={24}>
+              <Row gutter={[24, 0]}>
+                <Col xs={24} xl={6}>
+                  <Card
+                    className="mb-24"
+                    cover={<img alt="example" src={newsData[0].src} />}
+                    actions={[
+                      <Link className="newsdetail"
+                        to={"/newsdetail"}
+                        state={{ title: newsData[0].title, src: newsData[0].src }}
+                      >
+                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                          Xem thêm
+                        </Button>
+                      </Link>
+                    ]}
                   >
-                    <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
-                      Xem thêm
-                    </Button>
-                  </Link>,
-                ]}
-              >
-                <Meta description={newsData[0].title} />
-              </Card>
-              
-              <Card
-                className="mb-24"
-                cover={<img alt="example" src={newsData[1].src} />}
-                actions={[
-                  <Link
-                    to={"/newsdetail"}
-                    state={{ title: newsData[1].title, src: newsData[1].src }}
+                    <DescriptionNewStyle>
+                      <Meta description={newsData[0].title} />
+                    </DescriptionNewStyle>
+                  </Card>
+                  <Card
+                    className="mb-24"
+                    cover={<img alt="example" src={newsData[1].src} />}
+                    actions={[
+                      <Link
+                        to={"/newsdetail"}
+                        state={{ title: newsData[1].title, src: newsData[1].src }}
+                      >
+                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                          Xem thêm
+                        </Button>
+                      </Link>,
+                    ]}
                   >
-                    <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
-                      Xem thêm
-                    </Button>
-                  </Link>,
-                ]}
-              >
-                <Meta description={newsData[1].title} />
-              </Card>
-            </Col>
-            <Col xs={24} xl={12}
-              style={{
-                display: "flex",
-                alignItems: "center"
-              }}
-            >
-              <Card
-                cover={<img alt="example" src={newsData[2].src} />}
-                actions={[
-                  <Link
-                    to={"/newsdetail"}
-                    state={{ title: newsData[2].title, src: newsData[2].src }}
+                    <DescriptionNewStyle>
+                      <Meta description={newsData[1].title} />
+                    </DescriptionNewStyle>
+                  </Card>
+                </Col>
+                <Col xs={24} xl={12}
+                  style={{
+                    display: "flex",
+                    alignItems: "center"
+                  }}
+                >
+                  <div style={{ margin: 'auto', marginTop: 0 }}>
+
+                    <Card
+                      cover={<img alt="example" src={newsData[2].src} />}
+                      actions={[
+                        <Link
+                          to={"/newsdetail"}
+                          state={{ title: newsData[2].title, src: newsData[2].src }}
+                        >
+                          <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                            Xem thêm
+                          </Button>
+                        </Link>,
+                      ]}
+                    >
+                      <DescriptionNewStyle>
+                        <Meta description={newsData[2].title} />
+                      </DescriptionNewStyle>
+                        <p style={{color: 'rgb(51 51 51 / 82%)', margin: 8, fontWeight: "normal"}}>Tính đến nay, thương hiệu The Fast And The Furious thu về hơn 6 tỷ $. Furious 7 vượt mốc 1,5 tỷ $. F9: The Fast Sage dù công chiếu khi cơn đại dịch Covid-19 vẫn hoành hành khắp thế giới vẫn đạt doanh thu đáng thèm muốn 726 triệu $. Tại sao một cái tên vắt sữa hết phần phim mới này tới phần phim mới khác, vắt sữa luôn spin-off vẫn thành công?
+                        </p>
+                    </Card>
+                  </div>
+                </Col>
+                <Col xs={24} xl={6}>
+                  <Card
+                    className="mb-24"
+                    cover={<img alt="example" src={newsData[3].src} />}
+                    actions={[
+                      <Link
+                        to={"/newsdetail"}
+                        state={{ title: newsData[3].title, src: newsData[3].src }}
+                      >
+                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                          Xem thêm
+                        </Button>
+                      </Link>,
+                    ]}
                   >
-                    <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
-                      Xem thêm
-                    </Button>
-                  </Link>,
-                ]}
-              >
-                <Meta description={newsData[2].title} />
-              </Card>
-            </Col>
-            <Col xs={24} xl={6}>
-              <Card
-                className="mb-24"
-                cover={<img alt="example" src={newsData[3].src} />}
-                actions={[
-                  <Link
-                    to={"/newsdetail"}
-                    state={{ title: newsData[3].title, src: newsData[3].src }}
+                    <DescriptionNewStyle>
+                      <Meta description={newsData[3].title} />
+                    </DescriptionNewStyle>
+                  </Card>
+                  <Card
+                    className="mb-24 card-test"
+                    cover={<img alt="example" src={newsData[4].src} />}
+                    actions={[
+                      <Link
+                        to={"/newsdetail"}
+                        state={{ title: newsData[4].title, src: newsData[4].src }}
+                      >
+                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                          Xem thêm
+                        </Button>
+                      </Link>,
+                    ]}
                   >
-                    <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
-                      Xem thêm
-                    </Button>
-                  </Link>,
-                ]}
-              >
-                <Meta description={newsData[3].title} />
-              </Card>
-              <Card
-                className="mb-24"
-                cover={<img alt="example" src={newsData[4].src} />}
-                actions={[
-                  <Link
-                    to={"/newsdetail"}
-                    state={{ title: newsData[4].title, src: newsData[4].src }}
-                  >
-                    <Button style={{ backgroundColor: "#fa8c16", color: "white " }}>
-                      Xem thêm
-                    </Button>
-                  </Link>,
-                ]}
-              >
-                <Meta description={newsData[4].title} />
-              </Card>
-            </Col>
-            {/* <Col xs={24}>
+                    <DescriptionNewStyle>
+                      <Meta description={newsData[4].title} />
+                    </DescriptionNewStyle>
+                  </Card>
+                </Col>
+                {/* <Col xs={24}>
               <Card
                 className="header-solid h-full ant-card-p-0"
                 title={
@@ -226,9 +252,10 @@ const News = () => {
                 </Row>
               </Card>
             </Col> */}
-          </Row>
-        </Col>
-        {/* <Col span={24} md={8} className="mb-24">
+              </Row>
+            </Col>
+          </div>
+          {/* <Col span={24} md={8} className="mb-24">
           <Card
             bordered={false}
             className="header-solid h-full ant-invoice-card"
@@ -257,8 +284,31 @@ const News = () => {
             />
           </Card>
         </Col> */}
-      </Row>
+        </Row>
+      </NewsStyle>
     </>
   );
 };
 export default News;
+
+const NewsStyle = styled.div`
+  .ant-card .ant-card-body {
+    padding: 10px 3px;
+  }
+`;
+
+const DescriptionNewStyle = styled.div`
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: black !important;
+  .ant-card-meta-description {
+    color: rgb(0, 0, 0);
+    padding-bottom: 2px;
+  }
+  .ant-card-body {
+    padding: 10px;
+  }
+
+`;

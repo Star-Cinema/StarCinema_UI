@@ -18,14 +18,14 @@ function Verify() {
 
     const fecthData = async () => {
         var res = await axios.post("https://localhost:7113/api/auth/verify?email=" + email + "&token=" + token)
-        console.log(res?.data?.code)
+        // console.log(res?.data?.code)
         if (res?.data?.code == 200) setVerify(true)
     }
     return (
         <div className='main-verify'>
-            <div className='header'>
+            {/* <div className='header'>
                 <Header />
-            </div>
+            </div> */}
             <div className='main' style={{textAlign:"center"}}>
                 {
                     !verify ? <span>Wait a secons</span>
@@ -36,9 +36,9 @@ function Verify() {
                         </>
                 }
             </div>
-            <div className='footer'>
+            {/* <div className='footer'>
                 <AppFooter />
-            </div>
+            </div> */}
         </div>
     )
 }

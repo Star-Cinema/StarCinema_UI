@@ -1,5 +1,4 @@
 function Pay({ price, seats, services, postData }) {
-    console.log(services);
     return (
         <div className="row">
             <div className="row">
