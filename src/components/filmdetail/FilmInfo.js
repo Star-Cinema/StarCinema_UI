@@ -129,7 +129,7 @@ const FilmInfo = () => {
                   title: <a href="/">Trang chủ</a>,
                 },
                 {
-                  title: "Phim ..",
+                  title: "Phim ...",
                 },
               ]}
             />
