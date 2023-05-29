@@ -34,6 +34,8 @@ const FilmList = ({ isNowFilm }) => {
           setBusy(false);
 
           setNowFilmAPI(response.data);
+        }).catch(function (error) {
+          console.log(error);
         });
     }
     fetchData();
