@@ -1,6 +1,6 @@
 import { React } from "react";
 import "../App.css";
-import { Row, Col, Card, List } from "antd";
+import { Row, Col, Card, List, Breadcrumb } from "antd";
 import Advertise from "../components/home/Advertise";
 import { useLocation, Link } from "react-router-dom";
 
@@ -14,11 +14,23 @@ const FilmSearch = () => {
 
   return (
     <>
+      <Breadcrumb
+        style={{ margin: "1.5em" }}
+        items={[
+          {
+            title: <a href="/">Trang chủ</a>,
+          },
+          {
+            title: "Tìm kiếm",
+          },
+        ]}
+      />
+
       <Row style={{ margin: "1.5em" }}>
         <Col lg={18} xs={24}>
           {result.length == 0 ? (
             <>
-              <h3>No Film(s) Found</h3>
+              <h3>Không tìm thấy phim</h3>
             </>
           ) : (
             <List

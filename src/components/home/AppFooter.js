@@ -14,7 +14,15 @@ import {
 const AppFooter = () => {
   return (
     <>
-      <Footer style={{ backgroundColor: "#1a1a1a" }}>
+      <Footer
+        style={{
+          backgroundColor: "#1a1a1a",
+          backgroundImage:
+            "url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/bg_latestnew.png)",
+          backgroundPosition: "top center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <Row>
           <Col lg={6} xs={12} type="flex" align="left">
             <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
