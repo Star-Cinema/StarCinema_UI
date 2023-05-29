@@ -111,6 +111,7 @@ const News = () => {
               >
                 <Meta description={newsData[0].title} />
               </Card>
+              
               <Card
                 className="mb-24"
                 cover={<img alt="example" src={newsData[1].src} />}

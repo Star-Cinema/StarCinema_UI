@@ -90,7 +90,7 @@ const FilmInfo = () => {
       const index = listSchedule.length - 1;
 
       const lastStartDate = addDate(listSchedule[index].startTime.slice(0, 10));
-
+      
       disabledDate = (current) => {
         // Can not select days before today and date after last start date
         return (
