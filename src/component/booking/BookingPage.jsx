@@ -58,6 +58,7 @@ export default function BookablesPage() {
         }
     };
     // const [TabIndex, setTabIndex] = useState(0);
+    if(sessionStorage.getItem('token'))
     return (
         <div>
             <div className="container booking-page" style={{marginBottom:"30px"}}>
@@ -93,6 +94,29 @@ export default function BookablesPage() {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+    return (
+        <div style={{
+            height: "50vh",
+            display: "flex",
+            flexDirection : "column",
+            justifyContent: "center",
+            alignItems :"center"
+        }}>
+            <span style={{
+                fontSize : "30px",
+                marginBottom: "30px"
+            }}>Bạn chưa đăng nhập</span>
+            <button style={{
+                height : "48px",
+                border : "none",
+                borderRadius : "5px",
+                backgroundColor : "#fc3",
+                width : "200px",
+                fontSize : "20px"
+            }}
+            onClick={() => window.location = "/login"}>Đăng nhập ngay</button>
         </div>
     );
 }
