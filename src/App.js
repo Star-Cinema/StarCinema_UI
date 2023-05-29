@@ -18,7 +18,7 @@ import Header from './components/home/Header';
 
 function Layout() {
   return (
-    <div>
+    <div  className="booking-page-main">
       <Header/>
         <Chat />
       <Outlet />
