@@ -4,8 +4,12 @@ import ChooseTime from "./ChooseTime";
 function getDatesFromData(data) {
     const newDates = [];
     data.data.listItem.map((date) => {
+
         let d = date.startTime;
-        newDates.push(d);
+        if(new Date(d) >= Date.now()) {
+            
+            newDates.push(d);
+        }
         console.log("date: " + d);
     });
     // newDates.sort((a, b) =>  - b);
