@@ -9,10 +9,10 @@ const Main = () => {
   return (
     <>
       <Row style={{width: '80%', margin: 'auto'}}>
-        <Col lg={24} xs={24}>
+        <Col lg={24} xs={24}  style={{marginBottom:"1.5em"}}>
           <FilmTab />
 
-          <News />
+          <News  />
         </Col>
 
         {/* RIGHT SIDE */}

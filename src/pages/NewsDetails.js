@@ -5,7 +5,7 @@ import NewsInfo from "../components/newsdetail/NewsInfo";
 const NewsDetail = () => {
   return (
     <>
-      <NewsInfo />
+      <NewsInfo/>
     </>
   );
 };
