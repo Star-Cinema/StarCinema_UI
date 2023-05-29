@@ -1,9 +1,10 @@
 @font-face {
   font-family: "Arvo";
   src: local("Arvo"),
-   url("./assets/fonts/Arvo/Arvo-Bold.ttf") format("truetype");
+    url("./assets/fonts/Arvo/Arvo-Bold.ttf") format("truetype");
   font-weight: bold;
- }
+}
+
 :root {
   box-sizing: border-box;
 }
@@ -199,7 +200,7 @@ main {
   display: inline-block;
   margin: 0 0 1rem;
   padding: 0;
-  width: 16rem;
+  width: 14rem;
 }
 
 .items-list-nav .btn {
@@ -248,6 +249,7 @@ main {
 
 .booking-page .bottom {
   display: flex;
+  margin-left: 1.5rem;
 }
 
 .items-list-nav .btn-date {
@@ -292,7 +294,7 @@ footer.text-center.text-lg-start.text-white {
 }
 
 button.btn.btn-info.seat-choosen {
-  background: #00FF00	;
+  background: #00FF00;
 }
 
 ul.list-group {
@@ -320,10 +322,12 @@ ul.list-group {
   border: 1px solid #ced4da;
   /* border-radius: 21px; */
 }
+
 li.ng-scope {
   border: 1px solid #ced4da;
   /* border-radius: 21px; */
 }
+
 .ShowCase {
   margin: 0 0 48px;
   padding: 0;
@@ -337,6 +341,7 @@ li.ng-scope {
   border-radius: 21px;
   color: #7e7e7e;
 }
+
 .seat {
   display: inline-block;
   background: #2E1371;
@@ -346,25 +351,30 @@ li.ng-scope {
   position: relative;
   top: 1px;
 }
+
 span.seat.selected {
-  background: #00FF00	;
+  background: #00FF00;
 }
-span.seat.occupied{
-  background: gray	;
+
+span.seat.occupied {
+  background: gray;
 }
+
 .ShowCase li {
   margin: 0 2rem;
 }
+
 button.btn.btn-info.seat-unavailable {
   background-color: gray;
 }
+
 /* button.btn.btn-info.seat-available {
   background-color: white;
   border: 1px solid #ced4da;
   color: black;
 } */
 
-.please-film{
+.please-film {
   text-align: center;
 }
 
@@ -402,6 +412,7 @@ button.btn.btn-info.seat-unavailable {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -411,10 +422,11 @@ button.btn.btn-info.seat-unavailable {
   border: none;
   text-decoration: none;
   color: #000;
-  
+
   /* background: var(--primary);
   border: 1px solid var(--button-bg); */
 }
+
 a {
   text-decoration: none !important;
 }
@@ -422,6 +434,7 @@ a {
 .imgModify .ant-image-mask {
   display: none !important;
 }
+
 header.p-3.text-white {
   border-radius: 0px;
 }
@@ -431,7 +444,7 @@ header.p-3.text-white {
   background: white;
   border-bottom: 1px solid black;
 
-  padding: 0!important;
+  padding: 0 !important;
 }
 
 button.btn.btn-outline-light.me-2 {
@@ -455,20 +468,23 @@ footer.ant-layout-footer.css-dev-only-do-not-override-15rg2km {
 }
 
 .text-end {
-  text-align: right!important;
+  text-align: right !important;
   display: inherit;
 }
 
-.mb-24{
+.mb-24 {
   margin-bottom: 24px;
   border-radius: 3px;
 }
-.ant-card-cover img{
-  border-radius: 3px 3px 0px 0px!important;
+
+.ant-card-cover img {
+  border-radius: 3px 3px 0px 0px !important;
 }
+
 .showtimes-row {
   display: flex;
 }
+
 .title-movie {
   margin-left: 1rem;
 }
@@ -482,4 +498,12 @@ footer.ant-layout-footer.css-dev-only-do-not-override-w8mnev {
   /* position: fixed; */
   width: 100%;
   background-color: rgba(225, 238, 246, 0.7);
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+.booking-page-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

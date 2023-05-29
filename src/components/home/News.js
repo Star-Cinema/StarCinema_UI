@@ -9,23 +9,24 @@ const News = () => {
   const newsData = [
     {
       src: "./image/news1.jpg",
-      title: "TOP 6 Phim chuyển thể xuất sắc nhất",
+      title: "TOP 6 phim chuyển thể xuất sắc nhất",
     },
     {
       src: "./image/news2.jpg",
-      title: "THE BEATLES: EIGHT DAYS A WEEK – THE TOURING",
+      title: "The BEATLES: Vòng quanh thế giới",
     },
     {
       src: "https://cdn.galaxycine.vn/media/2023/5/21/fast-x-cung-gap-phan-dien-xuat-sac-nhat-loat-phim-fast--furious-5_1684644461547.jpg",
-      title: "[Review] Fast X: Cùng Gặp Phản Diện Xuất Sắc Nhất Loạt Phim Fast & Furious!",
+      title:
+        "[Review] Fast X: Cùng Gặp Phản Diện Xuất Sắc Nhất Loạt Phim Fast & Furious!",
     },
     {
       src: "https://cdn.galaxycine.vn/media/2023/5/17/maxresdefault-6_1684307079427.jpg",
-      title: "Nobita hóa phim công trong phần phim mới",
+      title: "Nobita hóa phi công trong phần phim mới",
     },
     {
       src: "./image/news5.jpg",
-      title: "5 Phim bạn nên xem trong tuần này",
+      title: "5 phim bạn nên xem trong tuần này",
     },
   ];
   // VYVNK1 UI OF NEWS
@@ -90,20 +91,28 @@ const News = () => {
       </Col>
       </Row> */}
       <NewsStyle>
-        <Row gutter={[24, 0]} style={{
-          backgroundImage: 'url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/bg_latestnew.png)',
-          backgroundPosition: 'top center',
-          backgroundRepeat: 'no-repeat'
-        }}>
+        <Row
+          gutter={[24, 0]}
+          style={{
+            backgroundImage:
+              "url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/bg_latestnew.png)",
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <Divider>
-            <h2 style={{
-              color: '#FE7900',
-              fontFamily: '"Roboto Condensed", Sans-serif',
-              fontWeight: 600,
-              margin: '40px'
-            }}>TIN TỨC</h2>
+            <h2
+              style={{
+                color: "#FE7900",
+                fontFamily: '"Roboto Condensed", Sans-serif',
+                fontWeight: 600,
+                margin: "40px",
+              }}
+            >
+              TIN TỨC
+            </h2>
           </Divider>
-          <div style={{ width: '80%', margin: 'auto' }}>
+          <div style={{ width: "80%", margin: "auto" }}>
             <Col xs={24} md={24}>
               <Row gutter={[24, 0]}>
                 <Col xs={24} xl={6}>
@@ -111,14 +120,24 @@ const News = () => {
                     className="mb-24"
                     cover={<img alt="example" src={newsData[0].src} />}
                     actions={[
-                      <Link className="newsdetail"
+                      <Link
+                        className="newsdetail"
                         to={"/newsdetail"}
-                        state={{ title: newsData[0].title, src: newsData[0].src }}
+                        state={{
+                          title: newsData[0].title,
+                          src: newsData[0].src,
+                        }}
                       >
-                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                        <Button
+                          style={{
+                            backgroundColor: "#fe7900",
+                            color: "white ",
+                            borderRadius: 15,
+                          }}
+                        >
                           Xem thêm
                         </Button>
-                      </Link>
+                      </Link>,
                     ]}
                   >
                     <DescriptionNewStyle>
@@ -131,9 +150,18 @@ const News = () => {
                     actions={[
                       <Link
                         to={"/newsdetail"}
-                        state={{ title: newsData[1].title, src: newsData[1].src }}
+                        state={{
+                          title: newsData[1].title,
+                          src: newsData[1].src,
+                        }}
                       >
-                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                        <Button
+                          style={{
+                            backgroundColor: "#fe7900",
+                            color: "white ",
+                            borderRadius: 15,
+                          }}
+                        >
                           Xem thêm
                         </Button>
                       </Link>,
@@ -144,22 +172,32 @@ const News = () => {
                     </DescriptionNewStyle>
                   </Card>
                 </Col>
-                <Col xs={24} xl={12}
+                <Col
+                  xs={24}
+                  xl={12}
                   style={{
                     display: "flex",
-                    alignItems: "center"
+                    alignItems: "center",
                   }}
                 >
-                  <div style={{ margin: 'auto', marginTop: 0 }}>
-
+                  <div style={{ margin: "auto", marginTop: 0 }}>
                     <Card
                       cover={<img alt="example" src={newsData[2].src} />}
                       actions={[
                         <Link
                           to={"/newsdetail"}
-                          state={{ title: newsData[2].title, src: newsData[2].src }}
+                          state={{
+                            title: newsData[2].title,
+                            src: newsData[2].src,
+                          }}
                         >
-                          <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                          <Button
+                            style={{
+                              backgroundColor: "#fe7900",
+                              color: "white ",
+                              borderRadius: 15,
+                            }}
+                          >
                             Xem thêm
                           </Button>
                         </Link>,
@@ -168,8 +206,21 @@ const News = () => {
                       <DescriptionNewStyle>
                         <Meta description={newsData[2].title} />
                       </DescriptionNewStyle>
-                        <p style={{color: 'rgb(51 51 51 / 82%)', margin: 8, fontWeight: "normal"}}>Tính đến nay, thương hiệu The Fast And The Furious thu về hơn 6 tỷ $. Furious 7 vượt mốc 1,5 tỷ $. F9: The Fast Sage dù công chiếu khi cơn đại dịch Covid-19 vẫn hoành hành khắp thế giới vẫn đạt doanh thu đáng thèm muốn 726 triệu $. Tại sao một cái tên vắt sữa hết phần phim mới này tới phần phim mới khác, vắt sữa luôn spin-off vẫn thành công?
-                        </p>
+                      <p
+                        style={{
+                          color: "rgb(51 51 51 / 82%)",
+                          margin: 8,
+                          fontWeight: "normal",
+                        }}
+                      >
+                        Tính đến nay, thương hiệu The Fast And The Furious thu
+                        về hơn 6 tỷ $. Furious 7 vượt mốc 1,5 tỷ $. F9: The Fast
+                        Sage dù công chiếu khi cơn đại dịch Covid-19 vẫn hoành
+                        hành khắp thế giới vẫn đạt doanh thu đáng thèm muốn 726
+                        triệu $. Tại sao một cái tên vắt sữa hết phần phim mới
+                        này tới phần phim mới khác, vắt sữa luôn spin-off vẫn
+                        thành công?
+                      </p>
                     </Card>
                   </div>
                 </Col>
@@ -180,9 +231,18 @@ const News = () => {
                     actions={[
                       <Link
                         to={"/newsdetail"}
-                        state={{ title: newsData[3].title, src: newsData[3].src }}
+                        state={{
+                          title: newsData[3].title,
+                          src: newsData[3].src,
+                        }}
                       >
-                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                        <Button
+                          style={{
+                            backgroundColor: "#fe7900",
+                            color: "white ",
+                            borderRadius: 15,
+                          }}
+                        >
                           Xem thêm
                         </Button>
                       </Link>,
@@ -198,9 +258,18 @@ const News = () => {
                     actions={[
                       <Link
                         to={"/newsdetail"}
-                        state={{ title: newsData[4].title, src: newsData[4].src }}
+                        state={{
+                          title: newsData[4].title,
+                          src: newsData[4].src,
+                        }}
                       >
-                        <Button style={{ backgroundColor: "#fe7900", color: "white ", borderRadius: 15 }}>
+                        <Button
+                          style={{
+                            backgroundColor: "#fe7900",
+                            color: "white ",
+                            borderRadius: 15,
+                          }}
+                        >
                           Xem thêm
                         </Button>
                       </Link>,
@@ -310,5 +379,4 @@ const DescriptionNewStyle = styled.div`
   .ant-card-body {
     padding: 10px;
   }
-
 `;

@@ -73,6 +73,7 @@ function ChooseDate({ setData, film, postData }) {
             .then((resp) => resp.json())
             .then((data) => {
                 setPrice(data.data?.listItem[0]?.ticket?.price);
+                console.log(data);
                 setDates(getDatesFromData(data));
                 setDateSelected(null);
             });

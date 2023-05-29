@@ -4,43 +4,89 @@ import {
   InstagramOutlined,
   FacebookOutlined,
   TwitterOutlined,
+  EnvironmentOutlined,
+  ShoppingOutlined,
+  HomeOutlined,
+  PhoneOutlined,
 } from "@ant-design/icons";
-
 
 //VYVNK1 COMPONENT FOOTER
 const AppFooter = () => {
-
   return (
     <>
-      <Footer style={{ backgroundColor: "#1a1a1a" }}>
+      <Footer
+        style={{
+          backgroundColor: "#1a1a1a",
+          backgroundImage:
+            "url(http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/bg_latestnew.png)",
+          backgroundPosition: "top center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <Row>
-          <Col lg={6} xs={12}type="flex" align="left">
-            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Địa chỉ</h3>
-            <p style={{color:"#a0a3a7"}}>123 Phan Đặng Lưu</p>
-            <p style={{color:"#a0a3a7"}}>Đà Nẵng, Việt Nam</p>
+          <Col lg={6} xs={12} type="flex" align="left">
+            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <EnvironmentOutlined /> Địa chỉ
+            </h3>
+            <ul>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>123 Phan Đăng Lưu</p>
+              </li>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Đà Nẵng, Việt Nam</p>
+              </li>
+            </ul>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Dịch vụ</h3>
-            <p style={{color:"#a0a3a7"}}>Email Marketing</p>
-            <p style={{color:"#a0a3a7"}}>Campaigns</p>
-            <p style={{color:"#a0a3a7"}}>Branding</p>
-            <p style={{color:"#a0a3a7"}}>Offline</p>
+            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <ShoppingOutlined /> Dịch vụ
+            </h3>
+            <ul>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Email Marketing</p>
+              </li>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Quảng cáo</p>
+              </li>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Nhãn hàng</p>
+              </li>
+            </ul>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>About</h3>
-            <p style={{color:"#a0a3a7"}}>Our Story</p>
-            <p style={{color:"#a0a3a7"}}>Benefits</p>
-            <p style={{color:"#a0a3a7"}}>Team</p>
-            <p style={{color:"#a0a3a7"}}>Careers</p>
+            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <HomeOutlined /> Về Chúng tôi
+            </h3>
+            <ul>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Giới thiệu công ty</p>
+              </li>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Quyền lợi</p>
+              </li>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Cơ hội việc làm</p>
+              </li>
+            </ul>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Hỗ trợ</h3>
-            <p style={{color:"#a0a3a7"}}>Câu hỏi thường gặp</p>
-            <p style={{color:"#a0a3a7"}}>Liên hệ chúng tôi</p>
-            <p style={{color:"#a0a3a7"}}>
-              {" "}
-              <InstagramOutlined /> <FacebookOutlined /> <TwitterOutlined />{" "}
-            </p>
+            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <PhoneOutlined /> Hỗ trợ
+            </h3>
+            <ul>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Câu hỏi thường gặp</p>
+              </li>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>Liên hệ chúng tôi</p>
+              </li>
+              <li>
+                <p style={{ color: "#a0a3a7" }}>
+                  {" "}
+                  <InstagramOutlined /> <FacebookOutlined /> <TwitterOutlined />{" "}
+                </p>
+              </li>
+            </ul>
           </Col>
         </Row>
       </Footer>
