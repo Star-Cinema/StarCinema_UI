@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import ChooseDate from "./ChooseDate";
 import NavFilms from "./NavFilms";
 import axios from "axios";
-import Header from "../../components/home/Header";
-import AppFooter from "../../components/home/AppFooter";
+
 export default function BookablesPage() {
     const listFilms = [];
     // const bookablesInGroup = data.bookables.filter((b) => b.group === group);
@@ -61,7 +60,6 @@ export default function BookablesPage() {
     // const [TabIndex, setTabIndex] = useState(0);
     return (
         <div>
-            <Header />
             <div className="container booking-page" style={{marginBottom:"30px"}}>
                 <h1>ĐẶT VÉ</h1>
                 <div className="main-booking row">
@@ -95,7 +93,6 @@ export default function BookablesPage() {
                     </div>
                 </div>
             </div>
-            <AppFooter />
         </div>
     );
 }

@@ -15,12 +15,12 @@ const AppFooter = () => {
       <Footer style={{ backgroundColor: "#1a1a1a" }}>
         <Row>
           <Col lg={6} xs={12}type="flex" align="left">
-            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Address</h3>
-            <p style={{color:"#a0a3a7"}}>123 Phan Dang Luu</p>
-            <p style={{color:"#a0a3a7"}}>Da Nang, Viet Nam</p>
+            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Địa chỉ</h3>
+            <p style={{color:"#a0a3a7"}}>123 Phan Đặng Lưu</p>
+            <p style={{color:"#a0a3a7"}}>Đà Nẵng, Việt Nam</p>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Services</h3>
+            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Dịch vụ</h3>
             <p style={{color:"#a0a3a7"}}>Email Marketing</p>
             <p style={{color:"#a0a3a7"}}>Campaigns</p>
             <p style={{color:"#a0a3a7"}}>Branding</p>
@@ -34,9 +34,9 @@ const AppFooter = () => {
             <p style={{color:"#a0a3a7"}}>Careers</p>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Help</h3>
-            <p style={{color:"#a0a3a7"}}>FAQs</p>
-            <p style={{color:"#a0a3a7"}}>Contact Us</p>
+            <h3 style={{color:"rgba(255, 255, 255, 0.7)"}}>Hỗ trợ</h3>
+            <p style={{color:"#a0a3a7"}}>Câu hỏi thường gặp</p>
+            <p style={{color:"#a0a3a7"}}>Liên hệ chúng tôi</p>
             <p style={{color:"#a0a3a7"}}>
               {" "}
               <InstagramOutlined /> <FacebookOutlined /> <TwitterOutlined />{" "}

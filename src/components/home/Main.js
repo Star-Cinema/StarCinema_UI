@@ -8,17 +8,17 @@ const { Meta } = Card;
 const Main = () => {
   return (
     <>
-      <Row>
-        <Col lg={18} xs={24}>
+      <Row style={{width: '80%', margin: 'auto'}}>
+        <Col lg={24} xs={24}>
           <FilmTab />
 
           <News />
         </Col>
 
         {/* RIGHT SIDE */}
-        <Col lg={6} xs={0}>
+        {/* <Col lg={6} xs={0}>
           <Advertise />
-        </Col>
+        </Col> */}
       </Row>
     </>
   );

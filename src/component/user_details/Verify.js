@@ -23,9 +23,9 @@ function Verify() {
     }
     return (
         <div className='main-verify'>
-            <div className='header'>
+            {/* <div className='header'>
                 <Header />
-            </div>
+            </div> */}
             <div className='main' style={{textAlign:"center"}}>
                 {
                     !verify ? <span>Wait a secons</span>
@@ -36,9 +36,9 @@ function Verify() {
                         </>
                 }
             </div>
-            <div className='footer'>
+            {/* <div className='footer'>
                 <AppFooter />
-            </div>
+            </div> */}
         </div>
     )
 }

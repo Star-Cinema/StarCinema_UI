@@ -13,14 +13,16 @@ import Verify from './component/user_details/Verify';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import MessageProvider from './Context/MessageContext';
 import FilmSearch from './pages/FilmSearch';
+import AppFooter from './components/home/AppFooter';
+import Header from './components/home/Header';
 
 function Layout() {
   return (
     <div>
-      <MessageProvider>
+      <Header/>
         <Chat />
-      </MessageProvider>
       <Outlet />
+      <AppFooter/>
     </div>
   );
 }

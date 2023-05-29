@@ -5,8 +5,6 @@
 */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Header from "../components/home/Header";
-import AppFooter from "../components/home/AppFooter";
 
 function VnPayReturn(props) {
     const [paymentInfo, setPaymentInfo] = useState({});
@@ -25,7 +23,6 @@ function VnPayReturn(props) {
 
     return (
         <div>
-            <Header />
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
@@ -88,7 +85,6 @@ function VnPayReturn(props) {
                     </div>
                 </div>
             </div>
-            <AppFooter />
         </div>
     );
 }
