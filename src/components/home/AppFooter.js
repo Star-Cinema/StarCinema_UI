@@ -30,7 +30,7 @@ const AppFooter = () => {
             </h3>
             <ul>
               <li>
-                <p style={{ color: "#a0a3a7" }}>123 Phan Đặng Lưu</p>
+                <p style={{ color: "#a0a3a7" }}>123 Phan Đăng Lưu</p>
               </li>
               <li>
                 <p style={{ color: "#a0a3a7" }}>Đà Nẵng, Việt Nam</p>
