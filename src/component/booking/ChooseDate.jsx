@@ -65,10 +65,11 @@ function ChooseDate({ setData, film, postData }) {
     const [price, setPrice] = useState(0);
     const [dateSelected, setDateSelected] = useState(null);
     useEffect(() => {
-        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}&limit=1000`)
+        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}`)
             .then((resp) => resp.json())
             .then((data) => {
                 setPrice(data.data?.listItem[0]?.ticket?.price);
+                console.log(data);
                 setDates(getDatesFromData(data));
                 setDateSelected(null);
             });
