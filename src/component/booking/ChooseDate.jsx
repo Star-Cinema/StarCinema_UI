@@ -4,8 +4,12 @@ import ChooseTime from "./ChooseTime";
 function getDatesFromData(data) {
     const newDates = [];
     data.data.listItem.map((date) => {
+
         let d = date.startTime;
-        newDates.push(d);
+        if(new Date(d) >= Date.now()) {
+            
+            newDates.push(d);
+        }
         console.log("date: " + d);
     });
     // newDates.sort((a, b) =>  - b);
@@ -65,7 +69,7 @@ function ChooseDate({ setData, film, postData }) {
     const [price, setPrice] = useState(0);
     const [dateSelected, setDateSelected] = useState(null);
     useEffect(() => {
-        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}&limit=1000`)
+        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}`)
             .then((resp) => resp.json())
             .then((data) => {
                 setPrice(data.data?.listItem[0]?.ticket?.price);
