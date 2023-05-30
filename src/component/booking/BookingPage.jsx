@@ -52,7 +52,7 @@ export default function BookablesPage() {
             if (response?.data?.code === 200) {
                 window.location = response.data?.data;
             }
-            console.log(response.data); // Process the response data
+            // console.log(response.data); // Process the response data
         } catch (error) {
             console.error(error);
         }
@@ -60,7 +60,10 @@ export default function BookablesPage() {
     // const [TabIndex, setTabIndex] = useState(0);
     return (
         <div>
-            <div className="container booking-page" style={{marginBottom:"30px"}}>
+            <div
+                className="container booking-page"
+                style={{ marginBottom: "30px" }}
+            >
                 <h1>ĐẶT VÉ</h1>
                 <div className="main-booking row">
                     <div className="nav-films col col-xxl-4">
@@ -72,9 +75,16 @@ export default function BookablesPage() {
                     <div className="content-booking col col-xxl-8 row">
                         {filmSelected === null ? (
                             <div className="bottom row">
-                                <p className="please-film">
-                                    Vui lòng chọn film
-                                </p>
+                                {films?.length === 0  ? (
+                                    <h4 className="please-film">
+                                        Hiện tại rạp không có phim nào đang
+                                        chiếu, vui lòng quay lại sau.
+                                    </h4>
+                                ) : (
+                                    <p className="please-film">
+                                        Vui lòng chọn film
+                                    </p>
+                                )}
                             </div>
                         ) : (
                             <div className="bottom row">

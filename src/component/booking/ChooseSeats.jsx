@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Pay from "./Pay";
 import SeatLoad from "./SeatLoad";
 import ShowCase from "./ShowCase";
-const rows = [0, 10, 20, 30];
+const rows = [0, 9, 18, 27];
 function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
     const [listSeats, setListSeats] = useState(null);
     const [servicesSelected, setServicesSelected] = useState([]);
@@ -18,15 +18,18 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                 `https://localhost:7113/api/Bookings/GetSeats?filmId=${idFilm}&scheduleId=${timeIndex}`
             )
                 .then((resp) => resp.json())
-                .then((data) => setListSeats(data.data));
+                .then((data) => {
+                    console.log("seats: ", data);
+                    setListSeats(data.data);
+                });
         }
     }, [timeIndex]);
-    
+
     const [services, setServices] = useState(null);
     const [listServicesS, setListServicesS] = useState([]);
     useEffect(() => {
         setData("listServiceId", servicesSelected);
-        
+
         if (services !== null) {
             const selectedData = services.filter((item) =>
                 servicesSelected.includes(item.id)
@@ -39,7 +42,6 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
         setServicesSelected(newArray);
     };
 
-    
     useEffect(() => {
         setData("listSeatId", seatsSelected);
     }, [seatsSelected]);
@@ -47,9 +49,7 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
     useEffect(() => {
         if (seatsSelected === null) {
         } else {
-            fetch(
-                "https://localhost:7113/api/Service/GetAllServices"
-            )
+            fetch("https://localhost:7113/api/Service/GetAllServices?page=0&pageSize=1000")
                 .then((resp) => resp.json())
                 .then((data) => {
                     setServices(data.data.listItem);

@@ -6,7 +6,7 @@ function getDatesFromData(data) {
     data.data.listItem.map((date) => {
         let d = date.startTime;
         newDates.push(d);
-        console.log("date: " + d);
+        // console.log("date: " + d);
     });
     // newDates.sort((a, b) =>  - b);
     const uniqueList = [];
@@ -69,7 +69,7 @@ function ChooseDate({ setData, film, postData }) {
             .then((resp) => resp.json())
             .then((data) => {
                 setPrice(data.data?.listItem[0]?.ticket?.price);
-                console.log(data);
+                // console.log(data);
                 setDates(getDatesFromData(data));
                 setDateSelected(null);
             });
