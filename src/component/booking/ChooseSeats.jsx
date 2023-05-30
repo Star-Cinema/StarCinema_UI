@@ -55,7 +55,7 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                     setServices(data.data.listItem);
                 });
         }
-    }, [seatsSelected]);
+    }, []);
     const handleSeatsId = (type, value) => {
         if (type === 1) {
             const newArray = [...seatsSelected]; // Create a new array using spread operator

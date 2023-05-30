@@ -86,6 +86,7 @@ function Header() {
                 placeholder="Tìm kiếm phim..."
                 aria-label="Search"
                 style={{ height: "40px" }}
+                maxLength={50}
               ></input>
               <Link
                 to="/filmsearch"

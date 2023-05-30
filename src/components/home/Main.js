@@ -8,7 +8,7 @@ const { Meta } = Card;
 const Main = () => {
   return (
     <>
-      <Row style={{width: '80%', margin: 'auto'}}>
+      <Row style={{width: '90%', margin: 'auto'}}>
         <Col lg={24} xs={24}  style={{marginBottom:"1.5em"}}>
           <FilmTab />
 
