@@ -161,7 +161,6 @@ a.btn {
 }
 
 .header-top .btn:hover {
-  color: #000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -506,4 +505,13 @@ footer.ant-layout-footer.css-dev-only-do-not-override-w8mnev {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.category-footer {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+.category-footer ul{
+  list-style: none;
 }

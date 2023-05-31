@@ -51,7 +51,7 @@ const FilmSearch = () => {
                         marginBottom: "1em",
                       }}
                       cover={
-                        <img alt="alt" src={p.images[0].path} height={300} />
+                        <img alt="alt" src={p.images[0]?.path} height={300} />
                       }
                     >
                       <Meta title={p.name} description={p.category.name} />

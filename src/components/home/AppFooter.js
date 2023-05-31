@@ -25,10 +25,10 @@ const AppFooter = () => {
       >
         <Row>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
-              <EnvironmentOutlined /> Địa chỉ
+            <h3 className="category-footer" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <EnvironmentOutlined style={{marginRight: 5}}/> Địa chỉ
             </h3>
-            <ul>
+            <ul style={{listStyle: 'none'}}>
               <li>
                 <p style={{ color: "#a0a3a7" }}>123 Phan Đăng Lưu</p>
               </li>
@@ -38,10 +38,10 @@ const AppFooter = () => {
             </ul>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
-              <ShoppingOutlined /> Dịch vụ
+            <h3 className="category-footer" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <ShoppingOutlined style={{marginRight: 5}}/> Dịch vụ
             </h3>
-            <ul>
+            <ul style={{listStyle: 'none'}}>
               <li>
                 <p style={{ color: "#a0a3a7" }}>Email Marketing</p>
               </li>
@@ -54,10 +54,10 @@ const AppFooter = () => {
             </ul>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
-              <HomeOutlined /> Về Chúng tôi
+            <h3 className="category-footer" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <HomeOutlined style={{marginRight: 5}}/> Về Chúng tôi
             </h3>
-            <ul>
+            <ul style={{listStyle: 'none'}}>
               <li>
                 <p style={{ color: "#a0a3a7" }}>Giới thiệu công ty</p>
               </li>
@@ -70,10 +70,10 @@ const AppFooter = () => {
             </ul>
           </Col>
           <Col lg={6} xs={12} type="flex" align="left">
-            <h3 style={{ color: "rgba(255, 255, 255, 0.7)" }}>
-              <PhoneOutlined /> Hỗ trợ
+            <h3 className="category-footer" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              <PhoneOutlined style={{marginRight: 5}}/> Hỗ trợ
             </h3>
-            <ul>
+            <ul style={{listStyle: 'none'}}>
               <li>
                 <p style={{ color: "#a0a3a7" }}>Câu hỏi thường gặp</p>
               </li>
