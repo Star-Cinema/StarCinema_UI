@@ -58,7 +58,14 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
         if (seatsSelected === null) {
         } else {
             fetch(
-                "https://localhost:7113/api/Service/GetAllServices?page=0&pageSize=1000"
+                "https://localhost:7113/api/Service/GetAllServices?page=0&pageSize=1000",
+                {
+                    method: "GET", // or 'POST', 'PUT', etc. depending on your API requirements
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             )
                 .then((resp) => resp.json())
                 .then((data) => {
