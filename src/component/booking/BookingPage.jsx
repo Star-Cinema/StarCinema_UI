@@ -9,7 +9,7 @@ export default function BookablesPage() {
     const [films, setFilms] = useState(null);
     var token = sessionStorage.getItem("token");
     useEffect(() => {
-        fetch("https://localhost:7113/api/Films/nowShowing", {
+        fetch("https://localhost:7113/api/Films/nextShowing", {
             method: "GET", // or 'POST', 'PUT', etc. depending on your API requirements
             headers: {
                 "Content-Type": "application/json",
