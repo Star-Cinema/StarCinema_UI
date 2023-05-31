@@ -15,14 +15,15 @@ import MessageProvider from './Context/MessageContext';
 import FilmSearch from './pages/FilmSearch';
 import AppFooter from './components/home/AppFooter';
 import Header from './components/home/Header';
+import FilmDetails from './pages/FilmDetails/FilmDetails';
 
 function Layout() {
   return (
-    <div  className="booking-page-main">
-      <Header/>
-        <Chat />
+    <div className="booking-page-main">
+      <Header />
+      <Chat />
       <Outlet />
-      <AppFooter/>
+      <AppFooter />
     </div>
   );
 }
@@ -45,11 +46,14 @@ function App() {
 
             <Route path="/vnpay_return" element={<VnPayReturn />} />
             <Route path="/chat" element={<Chat />} />
+
+            <Route path='/film/:id' element={<FilmDetails />} />
           </Route>
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+
         </Routes>
       </BrowserRouter>
     </MessageProvider>
