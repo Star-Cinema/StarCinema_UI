@@ -149,7 +149,7 @@ function FilmDetails() {
               filmUpcomming && filmUpcomming.slice(0,3).map((film, index) => (
                 <div className='film-item'>
                   <a href={'/film/' + film?.id}>
-                    <img src={film?.images[0].path} />
+                    <img src={film?.images[0]?.path} />
                   </a>
                   <span style={{ fontSize: "23px" }}>{film?.name}</span>
                 </div>
