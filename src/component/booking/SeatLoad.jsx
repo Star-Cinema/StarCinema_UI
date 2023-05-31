@@ -2,8 +2,6 @@ import { useState } from "react";
 function SeatLoad({ seat, handleSeatsId }) {
     
     const [status, setStatus] = useState(seat.status);
-    console.log(status);
-    // const [TabIndex, setTabIndex] = useState(0);
     let seatClass = "btn btn-info seat-available";
     let isButtonDisabled = false;
     if (status === "Unavailable") {
@@ -16,7 +14,6 @@ function SeatLoad({ seat, handleSeatsId }) {
     return (
         <button
             type="button"
-            // className="btn btn-info"
             className={seatClass}
             disabled={isButtonDisabled}
             onClick={() => {

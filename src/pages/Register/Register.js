@@ -19,6 +19,9 @@ function Register() {
         const error = {}
         if (name == '') error.name = 'Họ và tên không được để trống!'
         if (email == '') error.email = 'Email không được để trống!'
+        if (email.length > 32) error.email = 'Email dài tối đa 32 ký tự!'
+        const re = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if(!re.test(String(email).toLowerCase())) error.email = 'Email sai địng dạng!'
         if (password == '') error.password = 'Mật khẩu không được để trống!'
         if (password != repassword) error.repassword = 'Mật khẩu không trùng khớp!'
 
@@ -36,8 +39,15 @@ function Register() {
         }
 
         if (validate()) {
-            var res = await axios.post("https://localhost:7113/api/auth/register",user)
-            navigate("/login")
+            try{
+                var res = await axios.post("https://localhost:7113/api/auth/register",user)
+                if(res?.data?.code == 200)
+                navigate("/login")
+            } catch(e){
+                setErrors({
+                    email: "Email đã tồn tại"
+                })
+            }
         }
     }
     return (

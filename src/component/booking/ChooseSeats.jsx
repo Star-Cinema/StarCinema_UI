@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import Pay from "./Pay";
 import SeatLoad from "./SeatLoad";
 import ShowCase from "./ShowCase";
-const rows = [0, 10, 20, 30];
+const rows = [0, 9, 18, 27];
 function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
     const [listSeats, setListSeats] = useState(null);
     const [servicesSelected, setServicesSelected] = useState([]);
     const [seatsSelected, setSeatsSelected] = useState([]);
+    var token = sessionStorage.getItem("token");
     useEffect(() => {
         setListSeats(null);
         setServicesSelected([]);
@@ -15,18 +16,28 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
         if (timeIndex === null) {
         } else {
             fetch(
-                `https://localhost:7113/api/Bookings/GetSeats?filmId=${idFilm}&scheduleId=${timeIndex}`
+                `https://localhost:7113/api/Bookings/GetSeats?filmId=${idFilm}&scheduleId=${timeIndex}`,
+                {
+                    method: "GET", // or 'POST', 'PUT', etc. depending on your API requirements
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             )
                 .then((resp) => resp.json())
-                .then((data) => setListSeats(data.data));
+                .then((data) => {
+                    console.log("seats: ", data);
+                    setListSeats(data.data);
+                });
         }
     }, [timeIndex]);
-    
+
     const [services, setServices] = useState(null);
     const [listServicesS, setListServicesS] = useState([]);
     useEffect(() => {
         setData("listServiceId", servicesSelected);
-        
+
         if (services !== null) {
             const selectedData = services.filter((item) =>
                 servicesSelected.includes(item.id)
@@ -39,7 +50,6 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
         setServicesSelected(newArray);
     };
 
-    
     useEffect(() => {
         setData("listSeatId", seatsSelected);
     }, [seatsSelected]);
@@ -48,7 +58,14 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
         if (seatsSelected === null) {
         } else {
             fetch(
-                "https://localhost:7113/api/Service/GetAllServices"
+                "https://localhost:7113/api/Service/GetAllServices?page=0&pageSize=1000",
+                {
+                    method: "GET", // or 'POST', 'PUT', etc. depending on your API requirements
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             )
                 .then((resp) => resp.json())
                 .then((data) => {
@@ -97,8 +114,6 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                                                     <SeatLoad
                                                         key={index}
                                                         seat={seat}
-                                                        // setData={setData}
-                                                        // setSeat={setSeat}
                                                         handleSeatsId={
                                                             handleSeatsId
                                                         }
@@ -121,7 +136,6 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                                                         handleSeatsId={
                                                             handleSeatsId
                                                         }
-                                                        // setSeat={setSeat}
                                                     />
                                                 );
                                             })}
@@ -141,7 +155,6 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                                                         handleSeatsId={
                                                             handleSeatsId
                                                         }
-                                                        // setSeat={setSeat}
                                                     />
                                                 );
                                             })}
@@ -154,7 +167,6 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
 
                     {seatsSelected.length > 0 ? (
                         <div>
-                            {/* <Demo /> */}
                             <ChooseServices
                                 services={services}
                                 handleServicesId={handleServicesId}

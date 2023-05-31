@@ -17,7 +17,10 @@ function Login() {
     const validate = () => {
         const error = {}
         if (username == '') error.username = 'Email không được để trống!'
-        if(!isValidEmail(username))  error.username = 'Email sai định dạng!'
+        if (username.length > 32) error.username = 'Email dài tối đa 32 ký tự!'
+        const re = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if(!re.test(String(username).toLowerCase())) error.username = 'Email sai địng dạng!'
+        // if(!isValidEmail(username))  error.username = 'Email sai định dạng!'
         if (password == '') error.password = 'Mật khẩu không được để trống!'
 
         setErrors(error)
@@ -39,6 +42,8 @@ function Login() {
         }
 
         if (validate()) {
+            try{
+                
             var rs = await axios.post("https://localhost:7113/api/auth/login", user)
             console.log(rs?.data)
             if (rs?.data?.code == 200) {
@@ -51,7 +56,16 @@ function Login() {
                 }
                 else alert("This website for user")
             }
-            else alert(rs?.data?.message)
+        }catch(e){
+            if(e.response.data.message == "Username is invalid!")
+            setErrors({
+                username : "Email không tồn tại"
+            })
+            else
+            setErrors({
+                password : "Mật khẩu không đúng"
+            })
+        }
         }
     }
 
