@@ -1,10 +1,13 @@
 import { Tabs } from "antd";
 import { useState, useEffect } from "react";
 import FilmList from "./FilmList";
+import { useLocation } from "react-router-dom";
 
 
 //VYVNK1 COMPONENT FILMTAB CONTAINS NOWSHOWING / UPCOMING FILM
 const FilmTab = () => {
+  const location = useLocation();
+  console.log(location)
   const [isNowFilm, setIsNowFilm] = useState(true);
 
   const onChange = (key) => {

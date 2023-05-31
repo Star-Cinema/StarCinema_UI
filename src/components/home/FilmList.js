@@ -99,7 +99,8 @@ const FilmList = ({ isNowFilm }) => {
                     marginRight: 0,
                   }}
                 >
-                  <Link to={"/filmdetail"} state={{ id: p.id }}>
+                  {/* <Link to={"/filmdetail"} state={{ id: p.id }}> */}
+                  <Link to={"/film/" + p.id} state={{ id: p.id }}>
                     <Card
                       bordered={false}
                       hoverable

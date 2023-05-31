@@ -1,0 +1,150 @@
+.main-film-detail{
+    display: flex;
+    justify-content: center;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.main-film-detail .container-film-detail{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.main-film-detail .film-info{
+    display: flex;
+}
+.film-info .banner{
+    /* width: 300px; */
+    width: 25%;
+}
+.info{
+    margin-left: 50px;
+}
+.info .name span{
+    font-size: 30px;
+    font-weight: 600;
+}
+.duration{
+}
+.row-info {
+    height: 40px;
+    color: rgb(133, 133, 133);
+}
+.row-info span{
+    color: rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+/* .banner{
+    width: 30%;
+}
+.info{
+    width: 70%;
+} */
+
+.description{
+    margin-top: 50px;
+}
+.description .title{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.schedule{
+    margin-top: 50px;
+}
+.schedule .title{
+    font-size: 25px;
+    font-weight: 600;
+}
+.duration{
+    display: flex;
+    align-items: center;
+}
+.date-picker{
+    border-radius: 0;
+    border: 1px solid;
+    margin-top: 20px;
+    height: 40px;
+}
+.date{
+    margin-bottom: 30px;
+}
+.list-time{
+    border: 1px solid;
+    padding: 20px 40px;
+}
+.left{
+    width: 70%;
+}
+.right{
+    width: 30%;
+    margin-left: 30PX;
+}
+
+.list-time .time-item a{
+    border: 1px solid #f26b38;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 20px;
+    margin-right: 20px;
+    color: #f26b38;
+    cursor: pointer;
+}
+.list-time .time-item a:hover{
+    border: 1px solid #f26b38;
+    color: #fff;
+    /* background-color: #f26b38;    */
+}
+/* .list-time .time-item a:hover{
+    color: #fff;
+} */
+.list-time-title{
+    border-left: 10px solid #000;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #f26b38;
+    width: 270px;
+    color: #fff;
+}
+.right-title{
+    font-size: 25px;
+    font-weight: 600;
+}
+.film-item{
+    margin-bottom: 20px;
+}
+.film-item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.button-more{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.button-more a{
+    background-color: #fff;
+    border: 1px solid #f26b38;
+    color: #f26b38;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+}
+.button-more a:hover{
+    background-color: #f26b38;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 5px;
+}
+
+@media (max-width: 1000px) {
+    .right {
+      display: none;
+    }
+    .left{
+        width: 100%;
+    }
+  }
