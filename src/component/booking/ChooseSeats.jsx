@@ -28,7 +28,7 @@ function ChooseSeats({ timeIndex, idFilm, setData, price, postData }) {
                 .then((resp) => resp.json())
                 .then((data) => {
                     console.log("seats: ", data);
-                    setListSeats(data.data);
+                    setListSeats(data.data.sort((a, b) => a.seatName.localeCompare(b.seatName)));
                 });
         }
     }, [timeIndex]);
