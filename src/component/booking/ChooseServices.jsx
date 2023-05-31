@@ -5,28 +5,14 @@ import { Select, Space } from "antd";
 const { Option } = Select;
 
 function ChooseServices({ services, handleServicesId }) {
-    // const handle = (event) => {
-    //     handleServicesId(1, event.target.value);
-    // };
     const handleChange = (value) => {
         handleServicesId(value);
-        // console.log(`selected ${value}`);
     };
     return (
         <div className="choose-service">
             <h4 fo="inputService" className="form-label">
                 Chọn dịch vụ
             </h4>
-            {/* <Form.Select
-                aria-label="Default select example"
-                id="inputService"
-                onChange={handle}
-            >
-                <option>Open this select menu</option>
-                {services.map((service) => {
-                    return <option value={service.id}>{service.name}</option>;
-                })}
-            </Form.Select> */}
             {services === null ? (
                 ""
             ) : (
@@ -35,7 +21,6 @@ function ChooseServices({ services, handleServicesId }) {
                     style={{ width: "100%" }}
                     placeholder="Chọn dịch vụ"
                     defaultValue={[]}
-                    // onChange={handleChange}
                     onChange={handleChange}
                     optionLabelProp="label"
                 >

@@ -26,9 +26,6 @@ function NavFilms({ listFilms, setFilm }) {
                                           <p className="upper-text ng-binding">
                                               {film.name}
                                           </p>
-                                          {/* <p className="vn upper-text ng-binding">
-                                        Fast &amp; Furious 10
-                                    </p> */}
                                       </div>
                                   </div>
                               </a>

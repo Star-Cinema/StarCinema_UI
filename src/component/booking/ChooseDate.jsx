@@ -4,11 +4,9 @@ import ChooseTime from "./ChooseTime";
 function getDatesFromData(data) {
     const newDates = [];
     data.data.listItem.map((date) => {
-
         let d = date.startTime;
         // console.log("date: " + d);
-        if(new Date(d) >= Date.now()) {
-            
+        if (new Date(d) >= Date.now()) {
             newDates.push(d);
         }
         console.log("date: " + d);
@@ -69,8 +67,15 @@ function ChooseDate({ setData, film, postData }) {
     const [datess, setDates] = useState(null);
     const [price, setPrice] = useState(0);
     const [dateSelected, setDateSelected] = useState(null);
+    var token = sessionStorage.getItem("token");
     useEffect(() => {
-        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}`)
+        fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}`, {
+            method: "GET", // or 'POST', 'PUT', etc. depending on your API requirements
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        })
             .then((resp) => resp.json())
             .then((data) => {
                 setPrice(data.data?.listItem[0]?.ticket?.price);
