@@ -20,7 +20,7 @@ function NavFilms({ listFilms, setFilm }) {
                                   }}
                               >
                                   <div className="showtimes-row">
-                                      <img src={film.images[0].path}></img>
+                                      <img src={film.images[0]?.path}></img>
                                       <i className="icon-c16"></i>
                                       <div className="title-movie">
                                           <p className="upper-text ng-binding">

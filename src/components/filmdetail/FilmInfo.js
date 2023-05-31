@@ -141,7 +141,7 @@ const FilmInfo = () => {
                       <Image
                         preview={{ visible: false }}
                         width={240}
-                        src={data[0].images[0].path}
+                        src={data[0].images[0]?.path}
                         onClick={() => setOpen(true)}
                       />
                     </div>

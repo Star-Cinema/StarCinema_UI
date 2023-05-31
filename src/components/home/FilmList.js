@@ -67,7 +67,7 @@ const FilmList = ({ isNowFilm }) => {
     nowfilmAPI.data.map((c, key) => {
       data.push({
         key: key,
-        image: c.images[0].path,
+        image: c.images[0]?.path,
         id: c.id,
         name: c.name,
         category: c.category.name,
