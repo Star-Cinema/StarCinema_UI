@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import { FaCalendarAlt, FaDoorOpen, FaUsers, FaSearch } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
 import { Affix } from "antd";
 import styled from "styled-components";
 import "../../assets/js/header.js";
+import { MessageContext } from "../../Context/MessageContext";
 function Header() {
   const [user, setUser] = useState(
     sessionStorage.getItem("token") &&
@@ -24,6 +25,7 @@ function Header() {
 
   const [formData, setFormData] = useState("");
   const [listSearch, setListSearch] = useState([]);
+  const {currentUser} = useContext(MessageContext);
   const handleChange = (e) => {
     setFormData(e.target.value);
     axios
@@ -121,7 +123,7 @@ function Header() {
                     }}
                   >
                     <img
-                      src="https://banner2.cleanpng.com/20180402/ojw/kisspng-united-states-avatar-organization-information-user-avatar-5ac20804a62b58.8673620215226654766806.jpg"
+                      src={currentUser?.avatar}
                       style={{
                         height: "40px",
                         width: "40px",
