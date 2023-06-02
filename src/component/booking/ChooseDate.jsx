@@ -63,10 +63,32 @@ function getDatesFromData(data) {
 }
 
 var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-function ChooseDate({ setData, film, postData }) {
+function ChooseDate({ setData, film, postData, dataTime }) {
     const [datess, setDates] = useState(null);
     const [price, setPrice] = useState(0);
     const [dateSelected, setDateSelected] = useState(null);
+    const [timeChoose, setTimeChoose] = useState(null);
+    const [load, setLoad] = useState(true);
+    useEffect(() => {
+        if(load === true){
+            if (datess !== null) {
+                const date = datess.find(
+                    (dat) => {
+                        console.log(dat);
+                        return dat.dates.find(d => d.date === dataTime);
+                    }
+                );
+                if (date !== undefined) {
+                    
+                    setDateSelected(date);
+                    setTimeChoose(date.dates.find(d => d.date === dataTime));
+                    console.log("bip: ", dataTime);
+                    
+                }
+            }
+        }
+        
+    }, [datess]);
     var token = sessionStorage.getItem("token");
     useEffect(() => {
         fetch(`https://localhost:7113/api/Schedules?filmId=${film.id}`, {
@@ -137,6 +159,7 @@ function ChooseDate({ setData, film, postData }) {
                         idFilm={film.id}
                         price={price}
                         postData={postData}
+                        setTime={timeChoose}
                     />
                 )}
             </div>

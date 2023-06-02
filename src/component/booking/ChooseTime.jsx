@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import ChooseSeats from "./ChooseSeats";
-function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
-    const [timeIndex, setTimeIndex] = useState(null);
-
+function ChooseTime({ listTimes, setData, idFilm, price, postData, setTime }) {
+    console.log("id: ", setTime);
+    const [timeIndex, setTimeIndex] = useState(setTime.id);
     useEffect(() => {
-        setTimeIndex(null);
-    }, [listTimes]);
+        setTimeIndex(setTime.id);
+    }, []);
     return (
         <div>
             <h4>Chọn khung giờ</h4>

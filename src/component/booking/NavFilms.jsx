@@ -1,6 +1,6 @@
 import { useState } from "react";
-function NavFilms({ listFilms, setFilm }) {
-    const [selected, setSelected] = useState(null);
+function NavFilms({ listFilms, setFilm, setIntitial }) {
+    const [selected, setSelected] = useState(setIntitial === null ? null : setIntitial.id);
     return (
         <ul className="list-group">
             {listFilms === null
@@ -10,13 +10,13 @@ function NavFilms({ listFilms, setFilm }) {
                           <li className="ng-scope" key={index}>
                               <a
                                   className={
-                                      selected === index
+                                      selected === film.id
                                           ? "list-group-item movie active"
                                           : "list-group-item movie"
                                   }
                                   onClick={() => {
                                       setFilm(film);
-                                      setSelected(index);
+                                      setSelected(film.id);
                                   }}
                               >
                                   <div className="showtimes-row">
