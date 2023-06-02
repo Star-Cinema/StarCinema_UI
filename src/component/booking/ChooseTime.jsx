@@ -4,7 +4,8 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData, setTime }) {
     console.log("id: ", setTime);
     const [timeIndex, setTimeIndex] = useState(setTime.id);
     useEffect(() => {
-        setTimeIndex(setTime.id);
+        setTimeIndex(setTime?.id);
+        setData("scheduleId", setTime?.id);
     }, []);
     return (
         <div>
