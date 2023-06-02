@@ -11,6 +11,7 @@ function InforUser() {
     const [form] = Form.useForm()
     const [data, setData] = useState()
     const [url, setUrl] = useState()
+    const [file,setFile] = useState()
 
     useEffect(() => {
         fecthData()
@@ -76,8 +77,11 @@ function InforUser() {
 
     //Upload image HungTD34
     const handleUpload = async (e) => {
+        setFile(e.file)
         var url = await UploadImageAPI(e.file)
         setUrl(url)
+
+        console.log(e.file)
     }
 
     //GUI HungTD34
@@ -156,13 +160,13 @@ function InforUser() {
                     <Form.Item style={{ textAlign: "center" }}>
                         {
                             !data?.isEmailVerified &&
-                            <Button type="default" style={{ height: "48px", color: "#000" }} onClick={() => handleVerify()}>Verify</Button>
+                            <Button type="default" style={{ height: "48px", color: "#000", marginRight:"20px" }} onClick={() => handleVerify()}>Verify</Button>
                         }
                         <Button htmlType="submit" type="primary" style={{ height: "48px", backgroundColor: "#fc3", color: "#000" }}>Cập nhật</Button>
                     </Form.Item>
                 </Form></Col>
             <Col span={6} style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                <Image src={!url? data?.avatar : url} style={{ border: "2px solid #fc3", borderRadius: "3px", width:"100%",maxHeight:"250px", marginBottom:"20px"}} />
+                <Image src={!file? data?.avatar : URL.createObjectURL(file)} style={{ border: "2px solid #fc3", borderRadius: "3px", width:"100%",maxHeight:"250px", marginBottom:"20px"}} />
                 <Upload
                     multiple={false}
                     name="imageUpload"

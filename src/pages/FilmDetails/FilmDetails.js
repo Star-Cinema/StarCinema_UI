@@ -133,6 +133,14 @@ function FilmDetails() {
                                 //   </Row>
                                 // )}
 
+//                   !listTime?.length == 0 ? listTime?.map((item) => (
+//                     // <Tag color="orange">
+//                     //   {item.startTime.slice(11, 16)}
+//                     // </Tag>
+//                     <div className='time-item'>
+//                       <a href={'/booking?schedule=' + item?.id} style={{color:"#f26b38"}}>
+//                         {item?.startTime?.slice(11, 16)}
+//                       </a>
                                 date &&
                                     (!listTime?.length == 0 ? (
                                         listTime?.map((item) => (
