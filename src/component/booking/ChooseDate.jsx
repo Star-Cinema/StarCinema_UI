@@ -68,26 +68,21 @@ function ChooseDate({ setData, film, postData, dataTime }) {
     const [price, setPrice] = useState(0);
     const [dateSelected, setDateSelected] = useState(null);
     const [timeChoose, setTimeChoose] = useState(null);
-    const [load, setLoad] = useState(true);
     useEffect(() => {
-        if(load === true){
-            if (datess !== null) {
-                const date = datess.find(
-                    (dat) => {
-                        console.log(dat);
-                        return dat.dates.find(d => d.date === dataTime);
-                    }
-                );
+        if (datess !== null) {
+            if (dataTime !== null) {
+                const date = datess.find((dat) => {
+                    console.log(dat);
+                    return dat.dates.find((d) => d.date === dataTime);
+                });
+                console.log("bip: ", dataTime);
                 if (date !== undefined) {
-                    
                     setDateSelected(date);
-                    setTimeChoose(date.dates.find(d => d.date === dataTime));
+                    setTimeChoose(date.dates.find((d) => d.date === dataTime));
                     console.log("bip: ", dataTime);
-                    
                 }
             }
         }
-        
     }, [datess]);
     var token = sessionStorage.getItem("token");
     useEffect(() => {

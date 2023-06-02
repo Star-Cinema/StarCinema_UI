@@ -106,7 +106,7 @@ export default function BookablesPage() {
                                             film={filmSelected}
                                             setData={handleChange}
                                             postData={postData}
-                                            dataTime={data.date}
+                                            dataTime={data?.date}
                                         />
                                         {/* <ChooseServices />
                                 <Pay /> */}
