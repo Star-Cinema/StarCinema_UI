@@ -3,11 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { TbAlertCircle } from "react-icons/tb";
 import { EyeOutlined } from "@ant-design/icons";
-import { Table } from "antd";
+import { Button, Modal, Table } from "antd";
+import Barcode from "react-barcode";
 
 //Show history transactions of user HungTD34
 function Transactions() {
     const [bookings, setBooking] = useState()
+    const [code, setCode] = useState()
     const [data, setData] = useState([])
     useEffect(() => {
         fecthData()
@@ -28,11 +30,19 @@ function Transactions() {
                 createAt: booking?.createAt?.slice(0, 10),
                 filmName: booking?.filmName,
                 totalPrice: booking?.totalPrice,
-                function: <EyeOutlined />,
+                status: booking?.status == "Success" ? <Button style={{ width: "150px" }} type="primary">Thành công</Button> :
+                    booking?.status == "Pending" ? <Button style={{ width: "150px" }}>Chưa thanh toán</Button> : <Button type="primary" danger style={{ width: "150px" }}>Thất bại</Button>,
+                function: booking?.status == "Success" && <EyeOutlined onClick={() => showBarcode(booking)} id={1} />
+                // barcode : <div className = "barcode"><Barcode height={50} width={1} displayValue = {false} value={booking} /></div>
             })
         ))
 
         setData(list)
+    }
+
+    const showBarcode = (booking) => {
+        setCode("Booking id : " + booking?.id)
+        showModal()
     }
 
     const columns = [
@@ -52,43 +62,51 @@ function Transactions() {
             title: 'Thành tiền',
             dataIndex: 'totalPrice',
         },
-        // {
-        //     title: '',
-        //     dataIndex: 'function',
-        // },
+        {
+            title: 'Trạng thái',
+            dataIndex: 'status',
+        },
+        {
+            title: '',
+            dataIndex: 'function',
+            // dataIndex: 'barcode',
+        },
     ];
 
-    return (
-        // <table className="table" style={{minHeight:"45vh"}}>
-        //     <thead>
-        //         <tr>
-        //             <th scope="col">Mã giao dịch</th>
-        //             <th scope="col">Ngày</th>
-        //             <th scope="col">Phim</th>
-        //             <th scope="col">Thành tiền</th>
-        //             <th scope="col"></th>
-        //         </tr>
-        //     </thead>
-        //     <tbody>
-        //         {
-        //             bookings?.map((booking, index) => (
-        //                 <tr key={index} style={{height:"20px"}}>
-        //                     <th scope="row">{booking?.id}</th>
-        //                     <td>{booking?.createAt?.slice(0, 10)}</td>
-        //                     <td>{booking?.filmName}</td>
-        //                     <td>{booking?.totalPrice}</td>
-        //                     <td>
-        //                         <EyeOutlined />
-        //                     </td>
-        //                 </tr>
-        //             ))
-        //         }
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
 
-        //     </tbody>
-        // </table>
-        <div className="table" style={{ minHeight: "45vh" }}>
-            <Table columns={columns} dataSource={data} size="middle" />
-        </div>
+    return (
+        <>
+            <div className="table" style={{ minHeight: "45vh" }}>
+                <Table columns={columns} dataSource={data} size="middle" />
+            </div>
+
+            <Modal title="Mã booking" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center"
+                    }}
+                >
+                    <Barcode
+                        height={70}
+                        width={2}
+                        displayValue={false}
+                        // value={code}
+                        value={code}
+                    />
+                </div>
+            </Modal>
+        </>
     );
 }
 

@@ -129,7 +129,7 @@ function FilmDetails() {
                     //   {item.startTime.slice(11, 16)}
                     // </Tag>
                     <div className='time-item'>
-                      <a href='/booking' style={{color:"#f26b38"}}>
+                      <a href={'/booking?schedule=' + item?.id} style={{color:"#f26b38"}}>
                         {item?.startTime?.slice(11, 16)}
                       </a>
                     </div>
