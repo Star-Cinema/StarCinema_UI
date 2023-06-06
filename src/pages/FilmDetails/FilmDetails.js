@@ -32,12 +32,14 @@ function FilmDetails() {
   useEffect(() => {
     if (date) {
       const selectListDatetime = film?.schedules?.filter(
-        (item) => item.startTime.slice(0, 10) == date
+        (item) => (item.startTime.slice(0, 10) == date )
       );
+
       setListTime(selectListDatetime);
     }
-
-    console.log(filmUpcomming)
+    
+    console.log(listTime);
+    console.log(Date.now());
   }, [date])
   return (
     <div className='main-film-detail'>
