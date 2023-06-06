@@ -35,8 +35,7 @@ function FilmDetails() {
         if (date) {
             const selectListDatetime = film?.schedules?.filter(
                 (item) => item.startTime.slice(0, 10) == date
-                && new Date(item.startTime) > Date.now()
-            );
+                && new Date(item.startTime) > Date.now());
             setListTime(selectListDatetime);
         }
 
