@@ -73,6 +73,7 @@
 .list-time{
     border: 1px solid;
     padding: 20px 40px;
+    display: flex;
 }
 .left{
     width: 70%;
@@ -95,7 +96,7 @@
 .list-time .time-item a:hover{
     border: 1px solid #f26b38;
     color: #fff;
-    /* background-color: #f26b38;    */
+    /* background-color: #f26b38;   */
 }
 /* .list-time .time-item a:hover{
     color: #fff;

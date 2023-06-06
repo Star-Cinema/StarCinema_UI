@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
 import ChooseSeats from "./ChooseSeats";
-function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
-    const [timeIndex, setTimeIndex] = useState(null);
-
+function ChooseTime({ listTimes, setData, idFilm, price, postData, setTime }) {
+    console.log("id: ", setTime);
+    const [timeIndex, setTimeIndex] = useState(
+        setTime === null ? null : setTime.id
+    );
     useEffect(() => {
-        setTimeIndex(null);
-    }, [listTimes]);
+        if (setTime !== null) {
+            setTimeIndex(setTime?.id);
+            setData("scheduleId", setTime?.id);
+        } else {
+            setTimeIndex(null);
+        }
+    }, []);
     return (
         <div>
             <h4>Chọn khung giờ</h4>
@@ -13,7 +20,9 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
                 {listTimes.dates.map((time, index) => (
                     <li
                         key={index}
-                        className={time.id === timeIndex ? "selected col"  : "col"}
+                        className={
+                            time.id === timeIndex ? "selected col" : "col"
+                        }
                     >
                         <button
                             className="btn"
@@ -24,7 +33,9 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
                         >
                             {new Date(time.date).getHours() +
                                 ":" +
-                                (new Date(time.date).getMinutes() === 0 ? "00" : new Date(time.date).getMinutes())}
+                                (new Date(time.date).getMinutes() === 0
+                                    ? "00"
+                                    : new Date(time.date).getMinutes())}
                         </button>
                     </li>
                 ))}
@@ -32,7 +43,7 @@ function ChooseTime({ listTimes, setData, idFilm, price, postData }) {
             <hr></hr>
             {timeIndex === null ? (
                 ""
-            ) :  (
+            ) : (
                 <ChooseSeats
                     timeIndex={timeIndex}
                     idFilm={idFilm}

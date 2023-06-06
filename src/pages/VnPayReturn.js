@@ -6,7 +6,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Spin } from "antd";
-
+import numeral from 'numeral';
 function VnPayReturn(props) {
     const [paymentInfo, setPaymentInfo] = useState(null);
 
@@ -55,7 +55,7 @@ function VnPayReturn(props) {
                                                     Giá vé:
                                                 </label>
                                                 <p className="form-control">
-                                                    {paymentInfo?.data?.priceTicket}
+                                                    {numeral(paymentInfo?.data?.priceTicket).format('0,0.00')}đ
                                                 </p>
                                             </div>
                                             <div className="mb-3">
@@ -64,9 +64,9 @@ function VnPayReturn(props) {
                                                 </label>
                                                 <p className="form-control">
                                                     {
-                                                        paymentInfo?.data
-                                                            ?.priceService
-                                                    }
+                                                        numeral(paymentInfo?.data
+                                                            ?.priceService).format('0,0.00')
+                                                    }đ
                                                 </p>
                                             </div>
                                             <div className="mb-3">
@@ -74,7 +74,7 @@ function VnPayReturn(props) {
                                                     Tổng:
                                                 </label>
                                                 <p className="form-control">
-                                                    {paymentInfo?.data?.total}
+                                                    {numeral(paymentInfo?.data?.total).format('0,0.00')}đ
                                                 </p>
                                             </div>
                                         </div>

@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import ChooseDate from "./ChooseDate";
 import NavFilms from "./NavFilms";
 import axios from "axios";
-
+import { useLocation } from "react-router-dom";
 export default function BookablesPage() {
+    const location = useLocation();
+    const data = location.state;
+    console.log(data);
     const listFilms = [];
     // const bookablesInGroup = data.bookables.filter((b) => b.group === group);
     const [films, setFilms] = useState(null);
@@ -19,7 +22,7 @@ export default function BookablesPage() {
             .then((resp) => resp.json())
             .then((data) => setFilms(data.data));
     }, []);
-    const [filmSelected, setFilmSelected] = useState(null);
+    const [filmSelected, setFilmSelected] = useState(data === null ? null : data.idFilm);
     const getIdFilm = () => {
         return filmSelected === null ? "" : filmSelected.id;
     };
@@ -78,6 +81,7 @@ export default function BookablesPage() {
                             <NavFilms
                                 listFilms={films === null ? listFilms : films}
                                 setFilm={setFilmSelected}
+                                setIntitial={filmSelected}
                             />
                         </div>
                         <div className="content-booking col col-xxl-8 row">
@@ -102,6 +106,7 @@ export default function BookablesPage() {
                                             film={filmSelected}
                                             setData={handleChange}
                                             postData={postData}
+                                            dataTime={data?.date}
                                         />
                                         {/* <ChooseServices />
                                 <Pay /> */}

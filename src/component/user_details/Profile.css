@@ -35,3 +35,7 @@
     border: none;
     box-shadow: none;
 }
+
+.ant-upload-list-item-container{
+    display: none;
+}
